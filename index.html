@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protect Ethical Prosecutors — A nonpartisan watchdog on prosecutorial misconduct</title>
+  <meta name="description" content="Absolute immunity shields prosecutors from being sued for misconduct, even when it's intentional and it destroys a life. PEP is a nonpartisan watchdog building the data, the stories, and the public case to change that.">
+  <meta property="og:title" content="Protect Ethical Prosecutors">
+  <meta property="og:description" content="The most powerful people in the legal system are the least accountable. We're changing that.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Free stand-ins until the licensed GT Standard / GT Standard Mono / ABC Arizona Flare files are added (see styles.css) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<!-- Shared vector shapes (Icon · Arrow, Corner Fold, Tab Edge, Eyebrow icon, Quotes). Colors come from CSS variables. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 36 36">
+    <circle cx="18" cy="18" r="18" fill="var(--circle)"/>
+    <path d="M18.5 13.4785L18.4565 13.5417L20.9501 17.6262H11.5V18.3728H20.9501L18.4565 22.4573L18.5 22.5215L24.5 17.9907L18.5 13.4785Z" fill="var(--arrow)" stroke="var(--arrow)" stroke-width=".6"/>
+  </symbol>
+  <symbol id="i-fold" viewBox="0 0 58 58">
+    <path d="M58 58V0H0L58 58Z" fill="var(--fold-outer)"/>
+    <path d="M0 0V58H58L0 0Z" fill="var(--fold-inner)"/>
+  </symbol>
+  <symbol id="i-tabedge" viewBox="0 0 19 39">
+    <path d="M0 0L2.24741 0C4.39264 0 6.29882 1.36846 6.98485 3.40105L19 39H0V0Z" fill="var(--tab-bg)"/>
+  </symbol>
+  <symbol id="i-eyebrow" viewBox="0 0 17 17" fill="currentColor">
+    <path d="M8.5 17H0V8.5L8.5 17Z"/><path d="M17 17H8.5L17 8.5V17Z"/><path d="M0 8.5V0H8.5L0 8.5Z"/><path d="M17 8.5L8.5 0H17V8.5Z"/>
+  </symbol>
+  <symbol id="i-quotes" viewBox="0 0 83.8125 30.1" fill="currentColor">
+    <path d="M15.3 0.199997C11.5 6.1 9.5 10.7 8.8 15.1C9.3 15 9.7 15 10.2 15C13.8 15 17.1 17.9 17.1 22.2C17.1 26.8 13.5 30.1 9.1 30.1C3.6 30.1 0 25.9 0 19.3C0 13.4 1.6 7.3 5.8 0.199997H15.3ZM36.7 0.199997C32.9 6.1 30.9 10.7 30.2 15.1C30.7 15 31.1 15 31.6 15C35.2 15 38.5 17.9 38.5 22.2C38.5 26.8 34.9 30.1 30.5 30.1C25 30.1 21.4 25.9 21.4 19.3C21.4 13.4 23 7.3 27.2 0.199997H36.7Z"/>
+    <path d="M68.5125 29.9C72.3125 24 74.2125 19.5 74.9125 15C74.5125 15.1 74.1125 15.1 73.6125 15.1C69.9125 15.1 66.7125 12.2 66.7125 7.9C66.7125 3.3 70.1125 0 74.7125 0C80.1125 0 83.8125 4.2 83.8125 10.8C83.8125 16.7 82.2125 22.7 78.0125 29.9H68.5125ZM47.1125 29.9C50.9125 24 52.8125 19.5 53.5125 15C53.1125 15.1 52.7125 15.1 52.2125 15.1C48.5125 15.1 45.3125 12.2 45.3125 7.9C45.3125 3.3 48.7125 0 53.3125 0C58.7125 0 62.4125 4.2 62.4125 10.8C62.4125 16.7 60.8125 22.7 56.6125 29.9H47.1125Z"/>
+  </symbol>
+</svg>
+
+<!-- ============ MENU (Figma Navigation · Menu=Open) ============ -->
+<button class="burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+<div class="menu-scrim" aria-hidden="true"></div>
+<div class="menu-panel" id="site-menu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="menu-bar">
+    <a class="logo" href="/" aria-label="Protect Ethical Prosecutors — home"><img src="assets/logo.svg" alt="Protect Ethical Prosecutors" width="197.5" height="53.49"></a>
+    <div class="menu-actions">
+      <a class="btn" href="/donate">Donate <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <button class="menu-close" type="button" aria-label="Close menu"><span class="close-icon" aria-hidden="true"><i></i><i></i></span></button>
+    </div>
+  </div>
+  <nav class="menu-links" aria-label="Menu">
+    <a class="navlink" href="/issue" style="--i:0">Issue</a>
+    <a class="navlink" href="/evidence" style="--i:1">Evidence</a>
+    <a class="navlink" href="/stories" style="--i:2">Stories</a>
+    <a class="navlink" href="/about" style="--i:3">About PEP</a>
+    <a class="navlink" href="/resources" style="--i:4">Resources</a>
+    <a class="navlink" href="/take-action" style="--i:5">Take Action</a>
+    <a class="btn" href="/donate" style="--i:6">Donate <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </nav>
+</div>
+
+<div class="page">
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header">
+    <a class="logo" href="/" aria-label="Protect Ethical Prosecutors — home">
+      <img src="assets/logo.svg" alt="Protect Ethical Prosecutors" width="197.5" height="53.49">
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+      <a class="navlink" href="/issue">Issue</a>
+      <a class="navlink" href="/evidence">Evidence</a>
+      <a class="navlink" href="/stories">Stories</a>
+      <a class="navlink" href="/about">About PEP</a>
+      <a class="navlink" href="/resources">Resources</a>
+      <a class="navlink" href="/take-action">Take Action</a>
+      <a class="btn" href="/donate">Donate <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-h">
+      <div class="hero-content">
+        <h1 class="hero-headline t-heading-l" id="hero-h">The most powerful people in the legal system are the least accountable. <span class="t-accent">We're changing that.</span></h1>
+        <p class="hero-sub t-body-m">Absolute immunity shields prosecutors from being sued for misconduct, even when it's intentional and it destroys a life. PEP is a nonpartisan watchdog building the data, the stories, and the public case to change that.</p>
+      </div>
+      <div class="hero-media">
+        <div class="frame">
+          <img src="assets/hero.jpg" alt="A father holding his young daughter close, cheek to cheek" width="2400" height="1207">
+        </div>
+        <a class="btn" href="#film" style="--btn-bg: rgba(255,255,255,.3); --btn-text: #fff;">Watch Film <svg class="arrow" style="--circle:#0039D4" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ STAGE BREAKDOWN ============ -->
+    <section class="stage" aria-labelledby="stage-h">
+      <div class="stage-header">
+        <div>
+          <p class="eyebrow t-cta"><svg aria-hidden="true"><use href="#i-eyebrow"/></svg> Move through the case</p>
+          <h2 class="t-heading-l" id="stage-h">Absolute immunity In Action</h2>
+        </div>
+        <a class="cta" href="/issue">Explore issue <svg class="arrow" style="--circle:#9D00FF" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="stage-folders">
+        <div class="slider" data-slider>
+          <div>
+            <div class="slider-tabs" role="tablist" aria-label="Stages of a case">
+              <button class="tab is-active" role="tab" aria-selected="true" data-slide="0"><span class="tab-label">Start</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+              <button class="tab" role="tab" aria-selected="false" data-slide="1"><span class="tab-label">01: Charging</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+              <button class="tab" role="tab" aria-selected="false" data-slide="2"><span class="tab-label">02: Disclosure</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+              <button class="tab" role="tab" aria-selected="false" data-slide="3"><span class="tab-label">03: Trial</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+              <button class="tab" role="tab" aria-selected="false" data-slide="4"><span class="tab-label">04: Conviction</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+              <button class="tab" role="tab" aria-selected="false" data-slide="5"><span class="tab-label">05: Appeal</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+              <button class="tab" role="tab" aria-selected="false" data-slide="6"><span class="tab-label">06: After</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+              <button class="tab" role="tab" aria-selected="false" data-slide="7"><span class="tab-label">Why?</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+            </div>
+            <div class="slides">
+              <div class="slides-track">
+              <div class="slide" role="tabpanel" id="slide-0" aria-label="The anatomy of a case">
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">The anatomy of a case</p>
+                    <h3 class="t-heading-m-tight">Watch how it happens.</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">When a prosecutor breaks the rules meant to keep a case fair – hiding evidence, using false testimony, charging someone without cause – it's called prosecutorial misconduct. It happens at any stage of a case.</p>
+                    <a class="cta" href="/issue">Read more <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  </div>
+                </article>
+                <div class="slide-media"><img src="assets/slide-stage-start.jpg" alt="A desk seen from above: keyboard, a manila case folder, a plant and a mouse, rendered in orange halftone" width="2000" height="1334"></div>
+              </div>
+              <div class="slide" role="tabpanel" id="slide-1" aria-label="Stage 01 · Charging">
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">Stage 01 · Charging</p>
+                    <h3 class="t-heading-m-tight">A prosecutor brings the case.</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">The prosecutor reviews the police investigation and decides whether to charge, what to charge, and how serious the charges will be. Misconduct here means charging someone without enough evidence to justify it, or piling on additional or harsher charges than the case supports to pressure someone into a plea deal. Charging decisions are made almost entirely behind closed doors.</p>
+                    <a class="cta" href="/issue#charging">Read more <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  </div>
+                </article>
+                <div class="slide-media"><svg viewBox="0 0 800 464" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: a charging document listing eight counts, stamped CHARGED"><defs><pattern id="ht1" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.7" fill="#522409" opacity=".28"/></pattern></defs><rect width="800" height="464" fill="#FF5E00"/><rect width="800" height="464" fill="url(#ht1)"/>
+<g transform="rotate(-6 400 232)">
+ <rect x="250" y="40" width="330" height="420" fill="#FFBF8F"/>
+ <rect x="230" y="60" width="330" height="420" fill="#FFF1E2"/>
+ <text x="262" y="112" font-family="GT Standard Mono, Geist Mono, monospace" font-size="15" font-weight="500" fill="#522409" letter-spacing="1">THE PEOPLE v.</text>
+ <rect x="398" y="100" width="120" height="14" fill="#202020"/>
+ <rect x="262" y="130" width="266" height="3" fill="#522409"/>
+ <text x="262" y="170" font-family="GT Standard Mono, Geist Mono, monospace" font-size="13" font-weight="500" fill="#522409">COUNT 1</text><rect x="345" y="160" width="170" height="8" rx="2" fill="#FFBF8F"/><text x="262" y="204" font-family="GT Standard Mono, Geist Mono, monospace" font-size="13" font-weight="500" fill="#522409">COUNT 2</text><rect x="345" y="194" width="147" height="8" rx="2" fill="#FFBF8F"/><text x="262" y="238" font-family="GT Standard Mono, Geist Mono, monospace" font-size="13" font-weight="500" fill="#522409">COUNT 3</text><rect x="345" y="228" width="124" height="8" rx="2" fill="#FFBF8F"/><text x="262" y="272" font-family="GT Standard Mono, Geist Mono, monospace" font-size="13" font-weight="500" fill="#522409">COUNT 4</text><rect x="345" y="262" width="101" height="8" rx="2" fill="#FFBF8F"/><text x="262" y="306" font-family="GT Standard Mono, Geist Mono, monospace" font-size="13" font-weight="500" fill="#522409">COUNT 5</text><rect x="345" y="296" width="148" height="8" rx="2" fill="#FFBF8F"/><text x="262" y="340" font-family="GT Standard Mono, Geist Mono, monospace" font-size="13" font-weight="500" fill="#522409">COUNT 6</text><rect x="345" y="330" width="125" height="8" rx="2" fill="#FFBF8F"/><text x="262" y="374" font-family="GT Standard Mono, Geist Mono, monospace" font-size="13" font-weight="500" fill="#522409">COUNT 7</text><rect x="345" y="364" width="102" height="8" rx="2" fill="#FFBF8F"/><text x="262" y="408" font-family="GT Standard Mono, Geist Mono, monospace" font-size="13" font-weight="500" fill="#522409">COUNT 8</text><rect x="345" y="398" width="149" height="8" rx="2" fill="#FFBF8F"/>
+</g>
+<g transform="rotate(14 590 150)"><circle cx="590" cy="150" r="78" fill="none" stroke="#9D00FF" stroke-width="7"/><circle cx="590" cy="150" r="64" fill="none" stroke="#9D00FF" stroke-width="2"/><text x="590" y="158" text-anchor="middle" font-family="GT Standard Mono, Geist Mono, monospace" font-size="24" font-weight="500" fill="#9D00FF" letter-spacing="2">CHARGED</text></g></svg></div>
+              </div>
+              <div class="slide" role="tabpanel" id="slide-2" aria-label="Stage 02 · Disclosure">
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">Stage 02 · Disclosure</p>
+                    <h3 class="t-heading-m-tight">The law requires prosecutors to turn over evidence that could help the defense.</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">Misconduct here means hiding, altering, or destroying evidence so the defense can't use it and the jury never hears about it. This is the most common form of prosecutorial misconduct — and the hardest to catch, because what was hidden often stays hidden.</p>
+                    <a class="cta" href="/issue#disclosure">Read more <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  </div>
+                </article>
+                <div class="slide-media"><svg viewBox="0 0 800 464" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: a case file of redacted pages, with one page marked WITHHELD"><defs><pattern id="ht2" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.7" fill="#522409" opacity=".28"/></pattern></defs><rect width="800" height="464" fill="#FF5E00"/><rect width="800" height="464" fill="url(#ht2)"/>
+<path d="M150 120h150l24 26h326v290H150z" fill="#FFBF8F"/>
+<g transform="rotate(-3 380 270)"><rect x="200" y="110" width="300" height="340" fill="#FFF1E2"/>
+ <rect x="228" y="150" width="244" height="8" fill="#FFBF8F"/><rect x="228" y="176" width="207" height="14" fill="#FF006F"/><rect x="228" y="202" width="170" height="14" fill="#FF006F"/><rect x="228" y="228" width="223" height="8" fill="#FFBF8F"/><rect x="228" y="254" width="186" height="14" fill="#FF006F"/><rect x="228" y="280" width="239" height="14" fill="#FF006F"/><rect x="228" y="306" width="202" height="8" fill="#FFBF8F"/><rect x="228" y="332" width="165" height="14" fill="#FF006F"/><rect x="228" y="358" width="218" height="14" fill="#FF006F"/><rect x="228" y="384" width="181" height="8" fill="#FFBF8F"/><rect x="228" y="410" width="234" height="14" fill="#FF006F"/>
+</g>
+<g transform="rotate(9 590 210)"><rect x="500" y="70" width="190" height="250" fill="#FFF1E2"/><rect x="522" y="104" width="146" height="8" rx="2" fill="#FFBF8F"/><rect x="522" y="130" width="146" height="8" rx="2" fill="#FFBF8F"/><rect x="522" y="156" width="146" height="8" rx="2" fill="#FFBF8F"/><rect x="522" y="182" width="146" height="8" rx="2" fill="#FFBF8F"/><rect x="522" y="208" width="146" height="8" rx="2" fill="#FFBF8F"/><rect x="522" y="234" width="146" height="8" rx="2" fill="#FFBF8F"/><rect x="522" y="260" width="146" height="8" rx="2" fill="#FFBF8F"/>
+<rect x="512" y="258" width="168" height="38" fill="#522409"/><text x="596" y="283" text-anchor="middle" font-family="GT Standard Mono, Geist Mono, monospace" font-size="17" font-weight="500" fill="#FFBF8F" letter-spacing="2">WITHHELD</text></g>
+
+<path d="M130 300h540l-24 136H154z" fill="#FFBF8F"/><path d="M130 300h540l-24 136H154z" fill="url(#ht2)"/></svg></div>
+              </div>
+              <div class="slide" role="tabpanel" id="slide-3" aria-label="Stage 03 · Trial">
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">Stage 03 · Trial</p>
+                    <h3 class="t-heading-m-tight">For the small share of cases that go to trial, prosecutors are in the driver's seat.</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">Misconduct here includes discrimination in jury selection, putting on testimony the prosecutor knows is false, pressuring a witness into a version of events that isn't true, or telling a jury things the evidence doesn't support.</p>
+                    <a class="cta" href="/issue#trial">Read more <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  </div>
+                </article>
+                <div class="slide-media"><svg viewBox="0 0 800 464" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: a trial transcript with one false answer highlighted"><defs><pattern id="ht3" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.7" fill="#522409" opacity=".28"/></pattern></defs><rect width="800" height="464" fill="#FF5E00"/><rect width="800" height="464" fill="url(#ht3)"/>
+<rect x="200" y="50" width="400" height="420" fill="#FFF1E2"/>
+<rect x="200" y="50" width="400" height="44" fill="#522409"/>
+<text x="224" y="78" font-family="GT Standard Mono, Geist Mono, monospace" font-size="14" font-weight="500" fill="#FFBF8F" letter-spacing="1.5">TRIAL TRANSCRIPT · DAY 3</text>
+<rect x="212" y="106" width="2" height="352" fill="#FFBF8F"/>
+<text x="232" y="133" font-family="GT Standard Mono, Geist Mono, monospace" font-size="14" font-weight="500" fill="#522409">Q.</text><rect x="266" y="124" width="196" height="8" rx="2" fill="#FFBF8F"/><text x="232" y="173" font-family="GT Standard Mono, Geist Mono, monospace" font-size="14" font-weight="500" fill="#522409">A.</text><rect x="266" y="164" width="150" height="8" rx="2" fill="#FFBF8F"/><text x="232" y="213" font-family="GT Standard Mono, Geist Mono, monospace" font-size="14" font-weight="500" fill="#522409">Q.</text><rect x="266" y="204" width="230" height="8" rx="2" fill="#FFBF8F"/><text x="232" y="253" font-family="GT Standard Mono, Geist Mono, monospace" font-size="14" font-weight="500" fill="#522409">A.</text><rect x="262" y="234" width="300" height="30" fill="#202020"/><text x="272" y="254" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="21" fill="#FFF1E2">I saw him there that night.</text><text x="232" y="293" font-family="GT Standard Mono, Geist Mono, monospace" font-size="14" font-weight="500" fill="#522409">Q.</text><rect x="266" y="284" width="170" height="8" rx="2" fill="#FFBF8F"/><text x="232" y="333" font-family="GT Standard Mono, Geist Mono, monospace" font-size="14" font-weight="500" fill="#522409">A.</text><rect x="266" y="324" width="240" height="8" rx="2" fill="#FFBF8F"/><text x="232" y="373" font-family="GT Standard Mono, Geist Mono, monospace" font-size="14" font-weight="500" fill="#522409">Q.</text><rect x="266" y="364" width="120" height="8" rx="2" fill="#FFBF8F"/>
+<g transform="rotate(-8 640 300)"><rect x="560" y="276" width="190" height="44" fill="#FF9BC6"/><text x="655" y="305" text-anchor="middle" font-family="GT Standard Mono, Geist Mono, monospace" font-size="15" font-weight="500" fill="#202020" letter-spacing="1.5">FALSE TESTIMONY</text></g></svg></div>
+              </div>
+              <div class="slide" role="tabpanel" id="slide-4" aria-label="Stage 04 · Conviction">
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">Stage 04 · Conviction</p>
+                    <h3 class="t-heading-m-tight">A conviction can cost someone years – sometimes their whole life.</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">A conviction can mean prison time — but even without it, the conviction alone can be devastating: a lost job, trouble getting the next one, a lost home, a family pulled apart. By this stage, the damage is already done.</p>
+                    <a class="cta" href="/issue#conviction">Read more <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  </div>
+                </article>
+                <div class="slide-media"><svg viewBox="0 0 800 464" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: a signed plea agreement with the GUILTY box checked"><defs><pattern id="ht4" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.7" fill="#522409" opacity=".28"/></pattern></defs><rect width="800" height="464" fill="#FF5E00"/><rect width="800" height="464" fill="url(#ht4)"/>
+<g transform="rotate(4 400 250)">
+<rect x="230" y="40" width="340" height="430" fill="#FFF1E2"/>
+<text x="258" y="88" font-family="GT Standard Mono, Geist Mono, monospace" font-size="15" font-weight="500" fill="#522409" letter-spacing="1.5">PLEA AGREEMENT</text>
+<rect x="258" y="100" width="284" height="3" fill="#522409"/>
+<rect x="258" y="124" width="284" height="8" rx="2" fill="#FFBF8F"/><rect x="258" y="146" width="244" height="8" rx="2" fill="#FFBF8F"/><rect x="258" y="168" width="272" height="8" rx="2" fill="#FFBF8F"/><rect x="258" y="190" width="214" height="8" rx="2" fill="#FFBF8F"/><rect x="258" y="212" width="256" height="8" rx="2" fill="#FFBF8F"/>
+<rect x="258" y="250" width="26" height="26" fill="none" stroke="#522409" stroke-width="3"/><text x="298" y="270" font-family="GT Standard Mono, Geist Mono, monospace" font-size="15" font-weight="500" fill="#522409">NOT GUILTY</text>
+<rect x="258" y="292" width="26" height="26" fill="none" stroke="#522409" stroke-width="3"/><path d="M262 296l18 18M280 296l-18 18" stroke="#202020" stroke-width="4"/><text x="298" y="312" font-family="GT Standard Mono, Geist Mono, monospace" font-size="15" font-weight="500" fill="#522409">GUILTY</text>
+<path d="M262 400c20-26 34 10 52-8s22-30 40-6 30 4 44-4" fill="none" stroke="#007BFF" stroke-width="4" stroke-linecap="round"/>
+<rect x="258" y="412" width="220" height="2" fill="#522409"/>
+<text x="258" y="436" font-family="GT Standard Mono, Geist Mono, monospace" font-size="11" font-weight="500" fill="#522409">DEFENDANT</text>
+</g>
+</svg></div>
+              </div>
+              <div class="slide" role="tabpanel" id="slide-5" aria-label="Stage 05 · Appeal">
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">Stage 05 · Appeal</p>
+                    <h3 class="t-heading-m-tight">Occasionally, long after a conviction, a court finds the misconduct and puts it in writing.</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">Most cases are never reexamined, so most misconduct stays hidden. When a judge does put a finding in writing, it becomes part of the clearest record there is of how pervasive the problem is.</p>
+                    <a class="cta" href="/issue#appeal">Read more <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  </div>
+                </article>
+                <div class="slide-media"><svg viewBox="0 0 800 464" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: a stack of law reporters stamped AFFIRMED"><defs><pattern id="ht5" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.7" fill="#522409" opacity=".28"/></pattern></defs><rect width="800" height="464" fill="#FF5E00"/><rect width="800" height="464" fill="url(#ht5)"/><rect x="250" y="370" width="300" height="44" fill="#522409"/><rect x="270" y="388" width="70" height="8" fill="#FFBF8F"/><rect x="480" y="384" width="44" height="16" fill="none" stroke="#FFBF8F" stroke-width="2"/><rect x="267" y="320" width="300" height="44" fill="#FFBF8F"/><rect x="287" y="338" width="70" height="8" fill="#522409"/><rect x="497" y="334" width="44" height="16" fill="none" stroke="#522409" stroke-width="2"/><rect x="284" y="270" width="300" height="44" fill="#202020"/><rect x="304" y="288" width="70" height="8" fill="#FFBF8F"/><rect x="514" y="284" width="44" height="16" fill="none" stroke="#FFBF8F" stroke-width="2"/><rect x="261" y="220" width="300" height="44" fill="#FFF1E2"/><rect x="281" y="238" width="70" height="8" fill="#522409"/><rect x="491" y="234" width="44" height="16" fill="none" stroke="#522409" stroke-width="2"/><rect x="278" y="170" width="300" height="44" fill="#522409"/><rect x="298" y="188" width="70" height="8" fill="#FFBF8F"/><rect x="508" y="184" width="44" height="16" fill="none" stroke="#FFBF8F" stroke-width="2"/><rect x="255" y="120" width="300" height="44" fill="#FFBF8F"/><rect x="275" y="138" width="70" height="8" fill="#522409"/><rect x="485" y="134" width="44" height="16" fill="none" stroke="#522409" stroke-width="2"/>
+<g transform="rotate(-12 560 120)"><rect x="440" y="80" width="250" height="78" fill="#0039D4" stroke="#0039D4" stroke-width="7"/><text x="565" y="134" text-anchor="middle" font-family="GT Standard Mono, Geist Mono, monospace" font-size="34" font-weight="500" fill="#FFFFFF" letter-spacing="4">AFFIRMED</text></g>
+<text x="90" y="90" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="40" fill="#0039D4">“harmless error”</text></svg></div>
+              </div>
+              <div class="slide" role="tabpanel" id="slide-6" aria-label="Stage 06 · After">
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">Stage 06 · After</p>
+                    <h3 class="t-heading-m-tight">What happens to the prosecutor?</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">When misconduct is uncovered — the hidden evidence, the lost years, the judge's findings — here's what typically happens to the prosecutor: Nothing. Fewer than 2% of prosecutors who commit misconduct face any professional consequence, even after a court has found a violation.</p>
+                    <a class="cta" href="/issue#after">Read more <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  </div>
+                </article>
+                <div class="slide-media"><svg viewBox="0 0 800 464" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: tally marks counting years on a wall, and a slip reading EXONERATED"><defs><pattern id="ht6" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.7" fill="#522409" opacity=".28"/></pattern></defs><rect width="800" height="464" fill="#FF5E00"/><rect width="800" height="464" fill="url(#ht6)"/><rect x="150" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="168" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="186" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="204" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="140" y="98" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 182 102)"/><rect x="260" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="278" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="296" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="314" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="250" y="98" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 292 102)"/><rect x="370" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="388" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="406" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="424" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="360" y="98" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 402 102)"/><rect x="480" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="498" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="516" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="534" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="470" y="98" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 512 102)"/><rect x="590" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="608" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="626" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="644" y="70" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="580" y="98" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 622 102)"/><rect x="150" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="168" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="186" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="204" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="140" y="190" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 182 194)"/><rect x="260" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="278" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="296" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="314" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="250" y="190" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 292 194)"/><rect x="370" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="388" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="406" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="424" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="360" y="190" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 402 194)"/><rect x="480" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="498" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="516" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="534" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="470" y="190" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 512 194)"/><rect x="590" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="608" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="626" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="644" y="162" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="580" y="190" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 622 194)"/><rect x="150" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="168" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="186" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="204" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="140" y="282" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 182 286)"/><rect x="260" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="278" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="296" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="314" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="250" y="282" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 292 286)"/><rect x="370" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="388" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="406" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="424" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="360" y="282" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 402 286)"/><rect x="480" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="498" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="516" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="534" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="470" y="282" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 512 286)"/><rect x="590" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="608" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="626" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="644" y="254" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="580" y="282" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 622 286)"/><rect x="150" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="168" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="186" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="204" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="140" y="374" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 182 378)"/><rect x="260" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="278" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="296" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="314" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="250" y="374" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 292 378)"/><rect x="370" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="388" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="406" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="424" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="360" y="374" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 402 378)"/><rect x="480" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="498" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="516" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="534" y="346" width="7" height="66" rx="3" fill="#FFF1E2"/><rect x="470" y="374" width="84" height="7" rx="3" fill="#FFF1E2" transform="rotate(-24 512 378)"/>
+<g transform="rotate(-4 640 412)"><rect x="508" y="380" width="264" height="60" fill="#9ACCFF"/><text x="640" y="418" text-anchor="middle" font-family="GT Standard Mono, Geist Mono, monospace" font-size="22" font-weight="500" fill="#202020" letter-spacing="3">EXONERATED</text></g></svg></div>
+              </div>
+              <div class="slide" role="tabpanel" id="slide-7" aria-label="Why?">
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">Why?</p>
+                    <h3 class="t-heading-m-tight">Absolute immunity.</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">Prosecutors can't be sued for misconduct they commit while prosecuting a case — even when it's intentional, and even when it destroys a life. The Supreme Court created absolute immunity in 1976 and has turned down every chance to narrow it since.</p>
+                    <a class="cta" href="/issue#absolute-immunity">Read more <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  </div>
+                </article>
+                <div class="slide-media"><svg viewBox="0 0 800 464" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration: the year 1976 beside the columns of a courthouse"><defs><pattern id="ht7" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1.7" fill="#522409" opacity=".28"/></pattern></defs><rect width="800" height="464" fill="#FF5E00"/><rect width="800" height="464" fill="url(#ht7)"/>
+<path d="M410 190l170-90 170 90z" fill="#FFBF8F"/><rect x="410" y="190" width="340" height="14" fill="#FFBF8F"/><rect x="430" y="200" width="30" height="190" fill="#FFBF8F"/><rect x="492" y="200" width="30" height="190" fill="#FFBF8F"/><rect x="554" y="200" width="30" height="190" fill="#FFBF8F"/><rect x="616" y="200" width="30" height="190" fill="#FFBF8F"/><rect x="678" y="200" width="30" height="190" fill="#FFBF8F"/><rect x="400" y="390" width="360" height="20" fill="#FFBF8F"/><rect x="384" y="410" width="392" height="20" fill="#FFBF8F"/>
+<text x="60" y="250" font-family="GT Standard, Inter, sans-serif" font-weight="600" font-size="150" fill="#FFF1E2" letter-spacing="-6">1976</text>
+<rect x="64" y="282" width="296" height="40" fill="#E9C7FF"/><text x="80" y="309" font-family="GT Standard Mono, Geist Mono, monospace" font-size="16" font-weight="500" fill="#202020" letter-spacing="1.5">IMBLER v. PACHTMAN</text></svg></div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-arrows">
+            <button class="cta" data-prev aria-label="Previous stage"><svg class="arrow is-prev" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button class="cta" data-next><span data-next-label>Stage 01</span> <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BY THE NUMBERS ============ -->
+    <section class="stats" aria-labelledby="stats-h">
+      <div class="stats-inner">
+        <div class="section-row">
+          <h2 class="t-heading-m-tight" id="stats-h">A national problem, by the numbers</h2>
+          <a class="cta" href="/evidence">View all evidence <svg class="arrow" style="--circle:#FF006F" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ul class="stat-cards">
+          <li class="stat-card" style="--stat:#E9C7FF; --stat-desc:#F7ECFE; --stat-fold:#9D00FF" tabindex="0" role="button" aria-pressed="false" aria-label="~35% exonerations involve prosecutorial misconduct. Press to see the source.">
+            <div class="faces">
+              <div class="face front">
+                <p class="t-stat-xl" data-count data-prefix="~" data-value="35" data-suffix="%">~35%</p>
+                <p class="t-body-l">exonerations involve prosecutorial misconduct</p>
+                <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+              </div>
+              <div class="face back">
+                <div>
+                  <p class="t-label source-label">Where this number comes from</p>
+                  <p class="t-heading-m" style="margin-top:20px">National Registry of Exonerations, 2021–2025</p>
+                </div>
+                <p class="t-body-l">~35% exonerations involve prosecutorial misconduct</p>
+                <a class="cta" href="/evidence#exonerations">See the evidence <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+              </div>
+            </div>
+          </li>
+          <li class="stat-card" style="--stat:#FF9BC6; --stat-desc:#FFDFDF; --stat-fold:#FF006F" tabindex="0" role="button" aria-pressed="false" aria-label="44% wrongful convictions involve hiding evidence that could have helped the defense. Press to see the source.">
+            <div class="faces">
+              <div class="face front">
+                <p class="t-stat-xl" data-count data-prefix="" data-value="44" data-suffix="%">44%</p>
+                <p class="t-body-l">wrongful convictions involve hiding evidence that could have helped the defense</p>
+                <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+              </div>
+              <div class="face back">
+                <div>
+                  <p class="t-label source-label">Where this number comes from</p>
+                  <p class="t-heading-m" style="margin-top:20px">National Registry of Exonerations</p>
+                </div>
+                <p class="t-body-l">44% wrongful convictions involve hiding evidence that could have helped the defense</p>
+                <a class="cta" href="/evidence#brady">See the evidence <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+              </div>
+            </div>
+          </li>
+          <li class="stat-card" style="--stat:#9ACCFF; --stat-desc:#EAF1FB; --stat-fold:#007BFF" tabindex="0" role="button" aria-pressed="false" aria-label="70% wrongful murder convictions involved official misconduct. Press to see the source.">
+            <div class="faces">
+              <div class="face front">
+                <p class="t-stat-xl" data-count data-prefix="" data-value="70" data-suffix="%">70%</p>
+                <p class="t-body-l">wrongful murder convictions involved official misconduct</p>
+                <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+              </div>
+              <div class="face back">
+                <div>
+                  <p class="t-label source-label">Where this number comes from</p>
+                  <p class="t-heading-m" style="margin-top:20px">Death Penalty Information Center</p>
+                </div>
+                <p class="t-body-l">70% wrongful murder convictions involved official misconduct</p>
+                <a class="cta" href="/evidence#murder">See the evidence <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ COLORADO ============ -->
+    <section class="colorado" aria-labelledby="co-h">
+      <div class="colorado-inner">
+        <img src="assets/colorado.jpg" alt="" width="1741" height="724">
+        <div class="colorado-content">
+          <h2 class="t-heading-l" id="co-h"><span class="hl">The problem is national. The record is being built in Colorado.</span></h2>
+          <p class="t-body-xl">PEP has built the most complete record of prosecutorial misconduct in the country in Colorado. What it shows is not unique to the state. It is what every state would find if it looked. Colorado is also where accountability is closest to reach: 83% of Colorado voters — across the political spectrum — support ending absolute immunity for prosecutors. What gets proven in one state becomes the case for every state. That's why this matters no matter where you live.</p>
+          <a class="cta" href="/evidence">View all evidence <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUOTE ============ -->
+    <section class="quote">
+      <figure style="display:contents">
+        <svg class="quotemark" aria-hidden="true" style="color:#0039D4"><use href="#i-quotes"/></svg>
+        <blockquote class="t-quote-l"><span class="hl">The prosecutor is a minister of justice, not merely an advocate.</span></blockquote>
+        <figcaption>American Bar Association · Model Rules of Professional Conduct, Rule 3.8</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="newsletter" aria-labelledby="nl-h">
+      <div class="newsletter-copy">
+        <h2 class="t-heading-m" id="nl-h">Stay in the loop</h2>
+        <p class="t-body-m">Stay in the loop. Get PEP updates delivered to your inbox. Unsubscribe anytime.</p>
+      </div>
+      <form class="signup" action="#" method="post">
+        <label class="sr-only" for="nl-email">Your email address</label>
+        <input id="nl-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+        <button class="btn" type="submit">Subscribe <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      </form>
+      <svg class="fold is-small" aria-hidden="true"><use href="#i-fold"/></svg>
+    </section>
+
+    <!-- ============ STORIES ============ -->
+    <section class="stories" aria-labelledby="stories-h">
+      <div class="stories-block">
+        <div class="stories-head">
+          <h2 class="t-heading-section" id="stories-h">Stories</h2>
+          <div class="section-row">
+            <p class="t-body-m">Real stories by people victimized by prosecutorial misconduct</p>
+            <a class="cta" href="/stories">Access stories <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <ul class="story-rail">
+          <li><a class="story-card" href="/stories/clarence-moses-el">
+            <div class="frame"><img class="contain" src="assets/story-clarence-moses-el.jpg" alt="Clarence Moses El" width="1000" height="1000"></div>
+            <div class="story-meta"><p class="t-body-s">2019</p><h3 class="t-heading-m">Clarence Moses El</h3></div>
+          </a></li>
+          <li><a class="story-card" href="/stories/barry-morphew">
+            <div class="frame"><img src="assets/story-barry-morphew.jpg" alt="Barry Morphew" width="690" height="569"></div>
+            <div class="story-meta"><p class="t-body-s">2022</p><h3 class="t-heading-m">Barry Morphew</h3></div>
+          </a></li>
+          <li><a class="story-card" href="/stories/micah-kimball">
+            <div class="frame"><img class="zoom-micah" src="assets/story-micah-kimball.jpg" alt="Micah Kimball" width="447" height="447"></div>
+            <div class="story-meta"><p class="t-body-s">2021</p><h3 class="t-heading-m">Micah Kimball</h3></div>
+          </a></li>
+          <li><a class="story-card" href="/stories/ray-marshall">
+            <div class="frame"><img class="zoom-ray" src="assets/story-ray-marshall.jpg" alt="Ray Marshall" width="1128" height="848"></div>
+            <div class="story-meta"><p class="t-body-s">2020</p><h3 class="t-heading-m">Ray Marshall</h3></div>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ WHAT'S NEW ============ -->
+    <section class="whatsnew" aria-labelledby="new-h">
+      <div class="whatsnew-head">
+        <h2 class="t-heading-section" id="new-h">What's new</h2>
+        <p class="t-body-m">Two different things, kept distinct: the blog is PEP's own writing — analysis, explainers, and updates from the work. In the news is coverage of prosecutorial misconduct and absolute immunity reported by journalists elsewhere.</p>
+      </div>
+      <div class="columns">
+        <div class="column is-blog">
+          <div class="column-header">
+            <h3 class="t-heading-m">Blog</h3>
+            <a class="cta" href="/blog">All posts <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="articles">
+            <a class="paper-card" href="#"><h4 class="t-heading-m">Lorem Ipsum Dolor Amet</h4><p class="t-body-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p><svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg></a>
+            <a class="paper-card" href="#"><h4 class="t-heading-m">Lorem Ipsum Dolor Amet</h4><p class="t-body-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p><svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg></a>
+            <a class="paper-card" href="#"><h4 class="t-heading-m">Lorem Ipsum Dolor Amet</h4><p class="t-body-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p><svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg></a>
+          </div>
+        </div>
+        <div class="column is-news">
+          <div class="column-header">
+            <h3 class="t-heading-m">News</h3>
+            <a class="cta" href="/news">All coverage <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="articles">
+            <a class="folder-card" href="#"><span class="folder-tab"><span class="tab"><span class="tab-label">Dolor Amet</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></span></span><span class="folder-body"><h4 class="t-heading-m">Lorem Ipsum Dolor Amet</h4><p class="t-body-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p></span></a>
+            <a class="folder-card" href="#"><span class="folder-tab"><span class="tab"><span class="tab-label">Dolor Amet</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></span></span><span class="folder-body"><h4 class="t-heading-m">Lorem Ipsum Dolor Amet</h4><p class="t-body-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p></span></a>
+            <a class="folder-card" href="#"><span class="folder-tab"><span class="tab"><span class="tab-label">Dolor Amet</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></span></span><span class="folder-body"><h4 class="t-heading-m">Lorem Ipsum Dolor Amet</h4><p class="t-body-s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLOSING CTA ============ -->
+    <section class="closing" aria-labelledby="close-h">
+      <div class="closing-copy">
+        <div class="closing-headline">
+          <h2 class="t-display-xl" id="close-h">Let’s change our system <span class="hl t-accent">together.</span></h2>
+          <p class="t-body-m">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        </div>
+        <div class="closing-links">
+          <a class="cta" href="/take-action#share">Share <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="cta" href="/take-action#join">Join <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="cta" href="/take-action#report">Report <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="cta" href="/donate">Donate <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="closing-media">
+        <img src="assets/closing-courthouse.jpg" alt="Stone columns and pediment of a courthouse against a blue sky" width="1600" height="1200">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER · Figma "Footer" (13089:385) ============ -->
+  <footer class="ft">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <h2>Protect Ethical Prosecutors</h2>
+        <p>A nonpartisan watchdog building the data, the stories, and the public case for prosecutorial accountability.</p>
+      </div>
+      <nav class="ft-col ft-col-learn" aria-label="Learn"><h3>Learn</h3><ul><li><a href="/issue">The Issue</a></li><li><a href="/evidence">The Evidence</a></li><li><a href="/stories">Stories</a></li></ul></nav>
+      <nav class="ft-col ft-col-act" aria-label="Act"><h3>Act</h3><ul><li><a href="/take-action">Take Action</a></li><li><a href="/take-action#report">Report Misconduct</a></li><li><a href="/donate">Donate</a></li></ul></nav>
+      <nav class="ft-col ft-col-about" aria-label="About"><h3>About</h3><ul><li><a href="/about">About PEP</a></li><li><a href="/resources">News &amp; Resources</a></li><li><a href="/contact">Contact</a></li></ul></nav>
+      <div class="ft-news">
+        <form class="ft-signup" action="#" method="post">
+          <label class="sr-only" for="ft-email">Your email address</label>
+          <input id="ft-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="btn" type="submit">Subscribe <svg class="arrow" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </form>
+      </div>
+      <nav class="ft-col ft-col-doctrine" aria-label="The Doctrine"><h3>The Doctrine</h3><ul><li><a href="/issue#absolute-immunity">What is absolute immunity</a></li><li><a href="/issue#power">The power of prosecutors</a></li></ul></nav>
+      <nav class="ft-col ft-col-misconduct" aria-label="Types of Misconduct"><h3>Types of Misconduct</h3><ul><li><a href="/issue#hiding-evidence">Hiding evidence</a></li><li><a href="/issue#destroying-evidence">Destroying evidence</a></li><li><a href="/issue#fabricating-evidence">Fabricating evidence</a></li><li><a href="/issue#false-testimony">False testimony</a></li><li><a href="/issue#charging">Charging without probable cause</a></li><li><a href="/issue#improper-arguments">Improper arguments to the jury</a></li><li><a href="/issue#jury-selection">Discrimination in jury selection</a></li></ul></nav>
+      <nav class="ft-col ft-col-fails" aria-label="Why Accountability Fails"><h3>Why Accountability Fails</h3><ul><li><a href="/issue#criminal-prosecution">Criminal prosecution</a></li><li><a href="/issue#discipline">Professional discipline</a></li><li><a href="/issue#sanctions">Court sanctions</a></li><li><a href="/issue#elections">Elections &amp; firing</a></li></ul></nav>
+    </div>
+    <div class="ft-bottom">
+      <div class="wordmark" role="img" aria-label="Protect Ethical Prosecutors">
+        <img class="wm-left" src="assets/wordmark-left.svg" alt="">
+        <img class="wm-mid" src="assets/wordmark-mid.svg" alt="">
+        <img class="wm-right" src="assets/wordmark-right.svg" alt="">
+      </div>
+      <div class="ft-legal">
+        <p class="ft-copy"><img src="assets/copyright.png" alt="©" width="13" height="14">2026</p>
+        <a class="ft-social" href="#social" aria-label="PEP on YouTube, LinkedIn, X, Instagram and email"><img src="assets/social-links-footer.svg" alt="" width="330" height="50"></a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Menu: pink hamburger appears once the header scrolls away; it (and the mobile header button) opens the menu panel
+  (function () {
+    var body = document.body, burger = document.querySelector('.burger'), toggle = document.querySelector('.menu-toggle');
+    var panel = document.getElementById('site-menu'), scrim = document.querySelector('.menu-scrim'), header = document.querySelector('.site-header');
+    var opener = null;
+    function setOpen(open, from) {
+      body.classList.toggle('menu-open', open);
+      [burger, toggle].forEach(function (b) { if (!b) return; b.setAttribute('aria-expanded', open ? 'true' : 'false'); b.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+      if (open) { opener = from || burger; setTimeout(function () { var c = panel.querySelector('.menu-close'); if (c) c.focus({ preventScroll: true }); }, 300); }
+      else { onScroll(); if (opener) opener.focus({ preventScroll: true }); }
+    }
+    function isOpen() { return body.classList.contains('menu-open'); }
+    burger.addEventListener('click', function () { setOpen(!isOpen(), burger); });
+    if (toggle) toggle.addEventListener('click', function () { setOpen(!isOpen(), toggle); });
+    scrim.addEventListener('click', function () { setOpen(false); });
+    panel.querySelector('.menu-close').addEventListener('click', function () { setOpen(false); });
+    panel.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function (e) {
+      if (!isOpen()) return;
+      if (e.key === 'Escape') { setOpen(false); return; }
+      if (e.key === 'Tab') {
+        var f = Array.prototype.slice.call(panel.querySelectorAll('a, button')).filter(function (el) { return el.offsetParent !== null; });
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    function onScroll() {
+      if (isOpen()) return;
+      var past = header.getBoundingClientRect().bottom < 0;
+      burger.classList.toggle('is-shown', past);
+      burger.tabIndex = past ? 0 : -1;
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  })();
+
+  // Stage slider
+  (function () {
+    var root = document.querySelector('[data-slider]'); if (!root) return;
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('.slider-tabs .tab'));
+    var track = root.querySelector('.slides-track');
+    var slides = Array.prototype.slice.call(track.children);
+    var prev = root.querySelector('[data-prev]'), next = root.querySelector('[data-next]'), nextLabel = root.querySelector('[data-next-label]');
+    var labels = tabs.map(function (t) { return t.textContent.trim(); });
+    var i = 0;
+    function go(n) {
+      i = Math.max(0, Math.min(slides.length - 1, n));
+      track.style.transform = 'translateX(' + (-100 * i) + '%)';
+      tabs.forEach(function (t, k) { t.classList.toggle('is-active', k === i); t.setAttribute('aria-selected', k === i ? 'true' : 'false'); t.tabIndex = k === i ? 0 : -1; });
+      slides.forEach(function (s, k) { s.setAttribute('aria-hidden', k === i ? 'false' : 'true'); s.querySelectorAll('a').forEach(function (a) { a.tabIndex = k === i ? 0 : -1; }); });
+      prev.disabled = i === 0; next.disabled = i === slides.length - 1;
+      if (!next.disabled) nextLabel.textContent = labels[i + 1].replace(/^(\d\d): .*/, 'Stage $1');
+    }
+    tabs.forEach(function (t, k) { t.addEventListener('click', function () { go(k); }); });
+    prev.addEventListener('click', function () { go(i - 1); });
+    next.addEventListener('click', function () { go(i + 1); });
+    root.querySelector('.slider-tabs').addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { go(i + 1); tabs[i].focus(); }
+      if (e.key === 'ArrowLeft') { go(i - 1); tabs[i].focus(); }
+    });
+    var x0 = null;
+    track.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(dx < 0 ? i + 1 : i - 1); x0 = null; });
+    go(0);
+  })();
+
+  // Stat cards: numbers count up on first view; click, Enter or Space flips to the source
+  (function () {
+    var cards = document.querySelectorAll('.stat-card'); if (!cards.length) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function countUp(el) {
+      var target = +el.getAttribute('data-value'), pre = el.getAttribute('data-prefix') || '', suf = el.getAttribute('data-suffix') || '';
+      if (reduce) { el.textContent = pre + target + suf; return; }
+      var t0 = null, dur = 1400;
+      function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / dur); p = 1 - Math.pow(1 - p, 3);
+        el.textContent = pre + Math.round(target * p) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      el.textContent = pre + '0' + suf;
+      requestAnimationFrame(step);
+    }
+    if ('IntersectionObserver' in window) {
+      var seen = false;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && !seen) { seen = true; document.querySelectorAll('[data-count]').forEach(countUp); io.disconnect(); }
+        });
+      }, { threshold: 0.35 });
+      io.observe(cards[0]);
+    }
+    cards.forEach(function (c) {
+      function flip() { var on = c.classList.toggle('is-flipped'); c.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+      c.addEventListener('click', function (e) { if (e.target.closest('a')) return; flip(); });
+      c.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+    });
+  })();
+</script>
+
+</body>
+</html>

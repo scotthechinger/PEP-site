@@ -1,17 +1,17 @@
 ---
-// "Absolute immunity In Action" — tabs + slides. Content: src/data/home.js (stages). Art: src/illustrations/*.svg (temporary).
+// "Absolute immunity in action" — tabs + slides. v8 copy is ~3× what the 464px Figma card holds, so cards run at Body/S and the slide grows to fit (flagged for Kelsey). Content: src/data/home.js (stages). Art: src/illustrations/*.svg (temporary).
 import Arrow from '../Arrow.astro';
-import { stages } from '../../data/home.js';
+import { stages, stageBlock } from '../../data/home.js';
 const art = import.meta.glob('../../illustrations/*.svg', { query: '?raw', import: 'default', eager: true });
 const svgFor = (name) => art[`../../illustrations/${name}.svg`];
 ---
 <section class="stage" aria-labelledby="stage-h">
   <div class="stage-header">
     <div>
-      <p class="eyebrow t-cta"><svg aria-hidden="true"><use href="#i-eyebrow"/></svg> Move through the case</p>
-      <h2 class="t-heading-l" id="stage-h">Absolute immunity In Action</h2>
+      <p class="eyebrow t-cta"><svg aria-hidden="true"><use href="#i-eyebrow"/></svg> {stageBlock.scrollCue}</p>
+      <h2 class="t-heading-l" id="stage-h">{stageBlock.heading}</h2>
     </div>
-    <a class="cta" href="/issue">Explore issue <Arrow circle="#9D00FF" /></a>
+    <a class="cta" href={stageBlock.cta.href}>{stageBlock.cta.label} <Arrow circle="#9D00FF" /></a>
   </div>
 
   <div class="stage-folders">
@@ -32,7 +32,11 @@ const svgFor = (name) => art[`../../illustrations/${name}.svg`];
                     <h3 class="t-heading-m-tight">{s.heading}</h3>
                   </div>
                   <div class="slide-body">
-                    <p class="t-body-m">{s.body}</p>
+                    <div class="slide-text">
+                      {s.body.map((b) => b.beat
+                        ? <p class="t-heading-m-tight slide-beat">{b.beat}</p>
+                        : <p class="t-body-s">{b.label && <span class="t-label slide-label">{b.label}</span>}{b.text}</p>)}
+                    </div>
                     <a class="cta" href={s.href}>Read more <Arrow /></a>
                   </div>
                 </article>

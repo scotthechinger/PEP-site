@@ -9,18 +9,20 @@ export const site = {
   year: 2026,
 };
 
-// Primary nav (header + slide-down menu). Donate is a pill, so it's kept separate.
+// Primary nav (header + slide-down menu), per Language Doc v8. Donate is a pill, so it's kept separate.
+// FLAG: v8 adds a site search control to the nav; Figma has no design for it. Not built.
 export const nav = [
-  { label: 'Issue', href: '/issue' },
-  { label: 'Evidence', href: '/evidence' },
+  { label: 'The Issue', href: '/issue' },
+  { label: 'The Evidence', href: '/evidence' },
   { label: 'Stories', href: '/stories' },
   { label: 'About PEP', href: '/about' },
-  { label: 'Resources', href: '/resources' },
+  { label: 'News and Resources', href: '/resources' },
   { label: 'Take Action', href: '/take-action' },
 ];
 export const donate = { label: 'Donate', href: '/donate' };
 
-// Footer link columns (Figma "Footer" component 13089:385)
+// Footer link columns (Figma "Footer" component 13089:385; issue columns per Language Doc v8).
+// FLAG: v8 also lists press contact, the 501(c)(3)/501(c)(4) line and a privacy policy in the footer; Figma has no slots for them. Not built.
 export const footer = {
   blurb: 'A nonpartisan watchdog building the data, the stories, and the public case for prosecutorial accountability.',
   columns: [
@@ -36,27 +38,26 @@ export const footer = {
     ]},
     { key: 'about', title: 'About', links: [
       { label: 'About PEP', href: '/about' },
-      { label: 'News & Resources', href: '/resources' },
+      { label: 'News and Resources', href: '/resources' },
       { label: 'Contact', href: '/contact' },
     ]},
     { key: 'doctrine', title: 'The Doctrine', links: [
-      { label: 'What is absolute immunity', href: '/issue#absolute-immunity' },
-      { label: 'The power of prosecutors', href: '/issue#power' },
+      { label: 'Absolute immunity, explained', href: '/issue/absolute-immunity' },
+      { label: 'The power of prosecutors', href: '/issue/power-of-prosecutors' },
     ]},
     { key: 'misconduct', title: 'Types of Misconduct', links: [
-      { label: 'Hiding evidence', href: '/issue#hiding-evidence' },
-      { label: 'Destroying evidence', href: '/issue#destroying-evidence' },
-      { label: 'Fabricating evidence', href: '/issue#fabricating-evidence' },
-      { label: 'False testimony', href: '/issue#false-testimony' },
-      { label: 'Charging without probable cause', href: '/issue#charging' },
-      { label: 'Improper arguments to the jury', href: '/issue#improper-arguments' },
-      { label: 'Discrimination in jury selection', href: '/issue#jury-selection' },
+      { label: 'Hiding evidence', href: '/issue/hiding-evidence' },
+      { label: 'Destroying evidence', href: '/issue/destroying-evidence' },
+      { label: 'Fabricating evidence and false testimony', href: '/issue/fabricating-evidence' },
+      { label: 'Charging without probable cause', href: '/issue/charging-without-probable-cause' },
+      { label: 'Improper arguments to the jury', href: '/issue/improper-arguments' },
+      { label: 'Discrimination in jury selection', href: '/issue/jury-selection' },
     ]},
     { key: 'fails', title: 'Why Accountability Fails', links: [
-      { label: 'Criminal prosecution', href: '/issue#criminal-prosecution' },
-      { label: 'Professional discipline', href: '/issue#discipline' },
-      { label: 'Court sanctions', href: '/issue#sanctions' },
-      { label: 'Elections & firing', href: '/issue#elections' },
+      { label: 'Criminal prosecution', href: '/issue/criminal-prosecution' },
+      { label: 'Professional discipline', href: '/issue/professional-discipline' },
+      { label: 'Court sanctions', href: '/issue/court-sanctions' },
+      { label: 'Elections and firing', href: '/issue/elections-and-firing' },
     ]},
   ],
 };

@@ -505,7 +505,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .slide-card { flex-basis: auto; width: 100%; }
   .slide-media { height: 320px; }
   .stat-cards { flex-direction: column; }
-  .stat-card { height: 380px; min-height: 0; }
+  .stat-card { flex: 0 0 auto; height: 380px; min-height: 0; }
   .colorado-inner { min-height: 0; padding: var(--space-100) var(--space-50); }
   .newsletter { flex-direction: column; align-items: flex-start; padding: var(--space-50); }
   .newsletter .signup input { width: 100%; }

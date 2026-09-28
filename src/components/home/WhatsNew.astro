@@ -11,7 +11,7 @@ const { blog, news } = whatsNew;
   <div class="columns">
     <div class="column is-blog">
       <div class="column-header">
-        <div><h3 class="t-heading-m">{blog.heading}</h3><p class="t-body-s column-sub">{blog.sub}</p></div>
+        <h3 class="t-heading-m">{blog.heading}</h3>
         <a class="cta" href={blog.cta.href}>{blog.cta.label} <Arrow /></a>
       </div>
       <div class="articles">
@@ -22,7 +22,7 @@ const { blog, news } = whatsNew;
     </div>
     <div class="column is-news">
       <div class="column-header">
-        <div><h3 class="t-heading-m">{news.heading}</h3><p class="t-body-s column-sub">{news.sub}</p></div>
+        <h3 class="t-heading-m">{news.heading}</h3>
         <a class="cta" href={news.cta.href}>{news.cta.label} <Arrow /></a>
       </div>
       <div class="articles">

@@ -1,12 +1,12 @@
-// About page content (Figma frame 13092:20524). Copy is from the PEP Website Language Document v8 (source of truth over Figma); v8 itself notes its About copy still has to be fitted to Kelsey's revised layout.
+// About page content (Figma frame 13092:20524). Copy is from the Figma file.
 // "Lorem ipsum" / "Lorem alo" / "Dolor Amet" are Figma placeholders, kept until PEP supplies copy.
 
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
 
 export const intro = {
   eyebrow: 'What PEP Does',
-  headline: 'Protect Ethical Prosecutors is a nonpartisan watchdog organization committed to stopping prosecutorial misconduct.', // FLAG: v8 headline is ~2.5× the Figma one; the intro block grows past its 690px design height to hold it.
-  body: "PEP believes in ethical prosecution — and in accountability when that standard isn't met. Absolute immunity, a legal doctrine invented by the Supreme Court in 1976, shields prosecutors from civil liability even for intentional misconduct. Unlike police officers, doctors, and other attorneys, prosecutors cannot be sued for the harm they cause. PEP is building the data, the stories, and the public case to change that.", // v8: "PEP will rework the mission paragraph."
+  headline: 'PEP is a nonpartisan watchdog organization.',
+  body: "PEP believes in ethical prosecution, and in accountability when that standard isn't met. We're building the data, the stories, and the public case to change the law.",
   // Photo collage. Positions are Figma coordinates inside the collage box (see About/Intro.astro).
   collage: [
     { src: '/assets/about/about-intro-2.jpg', alt: 'PEP founder Iris Eytan speaking at a hearing', width: 547, height: 365, tab: { label: 'Lorem alo', tone: 'purple' } },
@@ -15,16 +15,15 @@ export const intro = {
   ],
 };
 
-// FLAG: this quote block is in Figma but not in v8, and v8's intro body now says the same thing. Kept as designed pending a call.
 export const quoteM = {
   text: 'It has not been possible to sue prosecutors — even for intentional misconduct — since a 1976 Supreme Court decision that gave them absolute immunity. This is a shield that police, doctors, and other attorneys don’t have.',
 };
 
 export const pillars = [
-  { tone: 'orange', title: 'Transparency and\ndocumentation', body: 'Building the searchable record of prosecutorial misconduct that no one else has assembled: court orders, case files, and sanction data.' },
-  { tone: 'pink', title: 'Public\neducation', body: 'Making accessible, in plain language, what prosecutors do, what absolute immunity is, and why it matters to everyone.' },
-  { tone: 'blue', title: 'Legal\nresearch', body: 'Developing the doctrine, the data analysis, and the practitioner-grade materials behind the case for accountability.' },
-  { tone: 'purple', title: 'Legislative\nwork', body: 'Turning the evidence into policy: a civil cause of action that lets people hold prosecutors accountable.' },
+  { tone: 'orange', title: 'Transparency &\nDocumentation', body: 'Building the searchable record of prosecutorial misconduct — court orders, case files, and sanction data — that no one else has assembled.' },
+  { tone: 'pink', title: 'Public\nEducation', body: 'Making accessible, in plain language, what prosecutors do, what absolute immunity is, and why it matters to everyone.' },
+  { tone: 'blue', title: 'Legislative\nWork', body: 'Turning the evidence into policy — a civil cause of action that lets people hold prosecutors accountable.' },
+  { tone: 'purple', title: 'Legal\nResearch', body: 'Developing the doctrine, the data analysis, and the practitioner-grade materials behind the case for accountability.' },
 ];
 
 export const wins = {
@@ -48,7 +47,6 @@ export const quoteL = {
 // Portraits are 720×959; `focus` is the vertical object-position (%) that reproduces Kelsey's crop in the 351×354 frame.
 const person = (name, title, file, focus = 50) => ({ name, title, image: { src: `/assets/team/${file}.jpg`, width: 720, height: 959, focus } });
 
-// FLAG: v8 says "Do not populate names beyond what PEP confirms — the public board differs from the internal project team." These are the names in Figma; confirm with PEP.
 export const team = {
   heading: 'Our Team',
   sub: 'The people behind PEP.',
@@ -82,18 +80,16 @@ export const team = {
   ],
 };
 
-// v8 5.4 — rewritten from the Figma text, which v8 says had the tax logic inverted. Legal characterizations: v8 flags Cat's sign-off as still needed.
 export const structure = {
-  eyebrow: 'Lorem ipsum', // Figma placeholder; v8 has no eyebrow here
-  heading: 'Two organizations, one mission',
-  sub: "Protect Ethical Prosecutors is made up of two entities. Federal law limits what an organization can do if it accepts tax-deductible donations, so the work is divided: PEP funds and executes all lobbying, and the PEP Foundation supports advocacy and education. Support for either goes to the same end — promoting prosecutorial ethics and deterring the misconduct that upends people's lives.",
+  eyebrow: 'Lorem ipsum',
+  heading: 'PEP Structure',
+  sub: 'Protect Ethical Prosecutors is comprised of two corporate entities – PEP and the PEP Foundation. Donations to either organization are welcomed and encouraged, and all funds will be used to promote prosecutorial ethics.',
   entities: [
-    { tone: 'purple', title: '501(c)(3) · PEP Foundation', cta: { label: 'Donate to PEP Foundation', href: '/donate#foundation' },
-      body: 'The Foundation supports the advocacy and education side of the work: building public understanding of what prosecutors do, what ethical standards require, and what happens when those standards fail. Because federal law restricts organizations that accept tax-deductible donations, the Foundation does not fund or conduct lobbying. Gifts are tax deductible.' },
-    { tone: 'pink', title: '501(c)(4) · PEP', cta: { label: 'Donate to PEP', href: '/donate' },
-      body: 'PEP funds and executes all lobbying on behalf of Protect Ethical Prosecutors, pursuing the policy and legislative change that holds prosecutors accountable. Because that work is unrestricted, gifts to PEP are not tax deductible.' },
+    { tone: 'purple', title: 'PEP Foundation', cta: { label: 'Donate to PEP Foundation', href: '/donate#foundation' },
+      body: 'The PEP Foundation (501(c)(3)) supports the advocacy and education efforts of Protect Ethical Prosecutors. Its work centers on public education, research, and awareness around prosecutorial ethics and the harm caused when those standards fail. Donations to the PEP Foundation are tax deductible. Because federal law restricts the activities of organizations that receive tax-deductible donations, the Foundation does not fund or conduct lobbying.' },
+    { tone: 'pink', title: 'PEP', cta: { label: 'Donate to PEP', href: '/donate' },
+      body: 'PEP (501(c)(4)) funds and executes all lobbying efforts on behalf of Protect Ethical Prosecutors, pursuing policy and legislative change that holds prosecutors to ethical standards. Donations to PEP are not tax deductible, which is what allows PEP to advocate directly for legislative reform without restrictions.' },
   ],
-  footnote: "Contact us for Zelle information if you're giving $500 or more.",
 };
 
 export const closingLinks = [{ label: 'Contact us', href: '/contact' }];

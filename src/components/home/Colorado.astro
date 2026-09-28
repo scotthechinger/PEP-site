@@ -7,7 +7,7 @@ import { colorado } from '../../data/home.js';
     <img src={colorado.image.src} alt="" width={colorado.image.width} height={colorado.image.height}>
     <div class="colorado-content">
       <h2 class="t-heading-l" id="co-h"><span class="hl">{colorado.headline}</span></h2>
-      <div class="colorado-body">{colorado.body.map((p) => <p class="t-body-xl">{p}</p>)}</div>
+      <p class="t-body-xl">{colorado.body}</p>
       <a class="cta" href={colorado.cta.href}>{colorado.cta.label} <Arrow /></a>
     </div>
   </div>

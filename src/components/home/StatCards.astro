@@ -1,13 +1,13 @@
 ---
 // "A national problem, by the numbers". Content: src/data/home.js (stats).
 import Arrow from '../Arrow.astro';
-import { stats, statsBlock } from '../../data/home.js';
+import { stats } from '../../data/home.js';
 ---
 <section class="stats" aria-labelledby="stats-h">
   <div class="stats-inner">
     <div class="section-row">
-      <h2 class="t-heading-m-tight" id="stats-h">{statsBlock.heading}</h2>
-      <a class="cta" href={statsBlock.cta.href}>{statsBlock.cta.label} <Arrow circle="#FF006F" /></a>
+      <h2 class="t-heading-m-tight" id="stats-h">A national problem, by the numbers</h2>
+      <a class="cta" href="/evidence">View all evidence <Arrow circle="#FF006F" /></a>
     </div>
     <ul class="stat-cards">
       {stats.map((s) => {

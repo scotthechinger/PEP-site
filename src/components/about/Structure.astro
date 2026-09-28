@@ -12,5 +12,4 @@ import { structure } from '../../data/about.js';
   <div class="structure-cards">
     {structure.entities.map((e) => <ActionCard variant="large" tone={e.tone} title={e.title} body={e.body} cta={e.cta} />)}
   </div>
-  {structure.footnote && <p class="t-body-s structure-footnote">{structure.footnote}</p>}
 </section>

@@ -1,0 +1,35 @@
+---
+import Arrow from '../Arrow.astro';
+import { whatsNew } from '../../data/home.js';
+const { blog, news } = whatsNew;
+---
+<section class="whatsnew" aria-labelledby="new-h">
+  <div class="whatsnew-head">
+    <h2 class="t-heading-section" id="new-h">{whatsNew.heading}</h2>
+    <p class="t-body-m">{whatsNew.sub}</p>
+  </div>
+  <div class="columns">
+    <div class="column is-blog">
+      <div class="column-header">
+        <h3 class="t-heading-m">{blog.heading}</h3>
+        <a class="cta" href={blog.cta.href}>{blog.cta.label} <Arrow /></a>
+      </div>
+      <div class="articles">
+        {blog.posts.map((p) => (
+          <a class="paper-card" href={p.href}><h4 class="t-heading-m">{p.title}</h4><p class="t-body-s">{p.excerpt}</p><svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg></a>
+        ))}
+      </div>
+    </div>
+    <div class="column is-news">
+      <div class="column-header">
+        <h3 class="t-heading-m">{news.heading}</h3>
+        <a class="cta" href={news.cta.href}>{news.cta.label} <Arrow /></a>
+      </div>
+      <div class="articles">
+        {news.posts.map((p) => (
+          <a class="folder-card" href={p.href}><span class="folder-tab"><span class="tab"><span class="tab-label">{p.tag}</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></span></span><span class="folder-body"><h4 class="t-heading-m">{p.title}</h4><p class="t-body-s">{p.excerpt}</p></span></a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

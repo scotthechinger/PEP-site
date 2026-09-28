@@ -1,0 +1,55 @@
+---
+// "Absolute immunity In Action" — tabs + slides. Content: src/data/home.js (stages). Art: src/illustrations/*.svg (temporary).
+import Arrow from '../Arrow.astro';
+import { stages } from '../../data/home.js';
+const art = import.meta.glob('../../illustrations/*.svg', { query: '?raw', import: 'default', eager: true });
+const svgFor = (name) => art[`../../illustrations/${name}.svg`];
+---
+<section class="stage" aria-labelledby="stage-h">
+  <div class="stage-header">
+    <div>
+      <p class="eyebrow t-cta"><svg aria-hidden="true"><use href="#i-eyebrow"/></svg> Move through the case</p>
+      <h2 class="t-heading-l" id="stage-h">Absolute immunity In Action</h2>
+    </div>
+    <a class="cta" href="/issue">Explore issue <Arrow circle="#9D00FF" /></a>
+  </div>
+
+  <div class="stage-folders">
+    <div class="slider" data-slider>
+      <div>
+        <div class="slider-tabs" role="tablist" aria-label="Stages of a case">
+          {stages.map((s, i) => (
+            <button class:list={['tab', i === 0 && 'is-active']} role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-slide={i}><span class="tab-label">{s.tab}</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></button>
+          ))}
+        </div>
+        <div class="slides">
+          <div class="slides-track">
+            {stages.map((s, i) => (
+              <div class="slide" role="tabpanel" id={`slide-${i}`} aria-label={s.eyebrow}>
+                <article class="slide-card">
+                  <div class="slide-head">
+                    <p class="t-label">{s.eyebrow}</p>
+                    <h3 class="t-heading-m-tight">{s.heading}</h3>
+                  </div>
+                  <div class="slide-body">
+                    <p class="t-body-m">{s.body}</p>
+                    <a class="cta" href={s.href}>Read more <Arrow /></a>
+                  </div>
+                </article>
+                {s.image
+                  ? <div class="slide-media"><img src={s.image.src} alt={s.image.alt} width={s.image.width} height={s.image.height}></div>
+                  : <div class="slide-media" set:html={svgFor(s.illustration)} />}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="slider-arrows">
+        <button class="cta" data-prev aria-label="Previous stage"><Arrow prev /></button>
+        <button class="cta" data-next><span data-next-label>Stage 01</span> <Arrow /></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../../scripts/slider.js"></script>

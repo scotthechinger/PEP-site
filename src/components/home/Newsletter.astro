@@ -1,0 +1,16 @@
+---
+import Arrow from '../Arrow.astro';
+import { newsletter } from '../../data/home.js';
+---
+<section class="newsletter" aria-labelledby="nl-h">
+  <div class="newsletter-copy">
+    <h2 class="t-heading-m" id="nl-h">{newsletter.heading}</h2>
+    <p class="t-body-m">{newsletter.body}</p>
+  </div>
+  <form class="signup" action="#" method="post">
+    <label class="sr-only" for="nl-email">Your email address</label>
+    <input id="nl-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+    <button class="btn" type="submit">Subscribe <Arrow /></button>
+  </form>
+  <svg class="fold is-small" aria-hidden="true"><use href="#i-fold"/></svg>
+</section>

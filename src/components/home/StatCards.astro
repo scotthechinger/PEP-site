@@ -1,0 +1,40 @@
+---
+// "A national problem, by the numbers". Content: src/data/home.js (stats).
+import Arrow from '../Arrow.astro';
+import { stats } from '../../data/home.js';
+---
+<section class="stats" aria-labelledby="stats-h">
+  <div class="stats-inner">
+    <div class="section-row">
+      <h2 class="t-heading-m-tight" id="stats-h">A national problem, by the numbers</h2>
+      <a class="cta" href="/evidence">View all evidence <Arrow circle="#FF006F" /></a>
+    </div>
+    <ul class="stat-cards">
+      {stats.map((s) => {
+        const num = `${s.prefix}${s.value}${s.suffix}`;
+        return (
+          <li class="stat-card" style={`--stat:${s.colors.stat}; --stat-desc:${s.colors.desc}; --stat-fold:${s.colors.fold}`} tabindex="0" role="button" aria-pressed="false" aria-label={`${num} ${s.text}. Press to see the source.`}>
+            <div class="faces">
+              <div class="face front">
+                <p class="t-stat-xl" data-count data-prefix={s.prefix} data-value={s.value} data-suffix={s.suffix}>{num}</p>
+                <p class="t-body-l">{s.text}</p>
+                <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+              </div>
+              <div class="face back">
+                <div>
+                  <p class="t-label source-label">Where this number comes from</p>
+                  <p class="t-heading-m" style="margin-top:20px">{s.source}</p>
+                </div>
+                <p class="t-body-l">{num} {s.text}</p>
+                <a class="cta" href={s.href}>See the evidence <Arrow /></a>
+                <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+              </div>
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>
+
+<script src="../../scripts/stats.js"></script>

@@ -1,0 +1,16 @@
+---
+import Arrow from '../Arrow.astro';
+import { hero } from '../../data/home.js';
+---
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero-content">
+    <h1 class="hero-headline t-heading-l" id="hero-h">{hero.headline} <span class="t-accent">{hero.accent}</span></h1>
+    <p class="hero-sub t-body-m">{hero.sub}</p>
+  </div>
+  <div class="hero-media">
+    <div class="frame">
+      <img src={hero.image.src} alt={hero.image.alt} width={hero.image.width} height={hero.image.height}>
+    </div>
+    <a class="btn" href={hero.cta.href} style="--btn-bg: rgba(255,255,255,.3); --btn-text: #fff;">{hero.cta.label} <Arrow circle="#0039D4" /></a>
+  </div>
+</section>

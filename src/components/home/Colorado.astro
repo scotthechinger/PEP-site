@@ -1,0 +1,14 @@
+---
+import Arrow from '../Arrow.astro';
+import { colorado } from '../../data/home.js';
+---
+<section class="colorado" aria-labelledby="co-h">
+  <div class="colorado-inner">
+    <img src={colorado.image.src} alt="" width={colorado.image.width} height={colorado.image.height}>
+    <div class="colorado-content">
+      <h2 class="t-heading-l" id="co-h"><span class="hl">{colorado.headline}</span></h2>
+      <p class="t-body-xl">{colorado.body}</p>
+      <a class="cta" href={colorado.cta.href}>{colorado.cta.label} <Arrow /></a>
+    </div>
+  </div>
+</section>

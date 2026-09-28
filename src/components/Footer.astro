@@ -1,0 +1,37 @@
+---
+// Site footer (Figma "Footer" component 13089:385). Columns come from src/data/site.js.
+import Arrow from './Arrow.astro';
+import FooterColumn from './FooterColumn.astro';
+import { footer, site } from '../data/site.js';
+const [learn, act, about, ...rest] = footer.columns;
+---
+<footer class="ft">
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <h2>{site.name}</h2>
+      <p>{footer.blurb}</p>
+    </div>
+    <FooterColumn col={learn} />
+    <FooterColumn col={act} />
+    <FooterColumn col={about} />
+    <div class="ft-news">
+      <form class="ft-signup" action="#" method="post">
+        <label class="sr-only" for="ft-email">Your email address</label>
+        <input id="ft-email" type="email" name="email" placeholder="Your email address" autocomplete="email" required>
+        <button class="btn" type="submit">Subscribe <Arrow /></button>
+      </form>
+    </div>
+    {rest.map((c) => <FooterColumn col={c} />)}
+  </div>
+  <div class="ft-bottom">
+    <div class="wordmark" role="img" aria-label={site.name}>
+      <img class="wm-left" src="/assets/wordmark-left.svg" alt="">
+      <img class="wm-mid" src="/assets/wordmark-mid.svg" alt="">
+      <img class="wm-right" src="/assets/wordmark-right.svg" alt="">
+    </div>
+    <div class="ft-legal">
+      <p class="ft-copy"><img src="/assets/copyright.png" alt="©" width="13" height="14">{site.year}</p>
+      <a class="ft-social" href="#social" aria-label="PEP on YouTube, LinkedIn, X, Instagram and email"><img src="/assets/social-links-footer.svg" alt="" width="330" height="50"></a>
+    </div>
+  </div>
+</footer>

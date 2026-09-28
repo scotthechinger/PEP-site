@@ -1,0 +1,18 @@
+---
+import Arrow from '../Arrow.astro';
+import { closing } from '../../data/home.js';
+---
+<section class="closing" aria-labelledby="close-h">
+  <div class="closing-copy">
+    <div class="closing-headline">
+      <h2 class="t-display-xl" id="close-h">{closing.headline} <span class="hl t-accent">{closing.accent}</span></h2>
+      <p class="t-body-m">{closing.body}</p>
+    </div>
+    <div class="closing-links">
+      {closing.links.map((l) => <a class="cta" href={l.href}>{l.label} <Arrow /></a>)}
+    </div>
+  </div>
+  <div class="closing-media">
+    <img src={closing.image.src} alt={closing.image.alt} width={closing.image.width} height={closing.image.height}>
+  </div>
+</section>

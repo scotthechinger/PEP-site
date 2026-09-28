@@ -1,0 +1,8 @@
+---
+interface Props { col: { key: string; title: string; links: { label: string; href: string }[] } }
+const { col } = Astro.props;
+---
+<nav class={`ft-col ft-col-${col.key}`} aria-label={col.title}>
+  <h3>{col.title}</h3>
+  <ul>{col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+</nav>

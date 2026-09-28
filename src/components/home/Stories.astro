@@ -1,0 +1,23 @@
+---
+import Arrow from '../Arrow.astro';
+import { stories } from '../../data/home.js';
+---
+<section class="stories" aria-labelledby="stories-h">
+  <div class="stories-block">
+    <div class="stories-head">
+      <h2 class="t-heading-section" id="stories-h">{stories.heading}</h2>
+      <div class="section-row">
+        <p class="t-body-m">{stories.sub}</p>
+        <a class="cta" href={stories.cta.href}>{stories.cta.label} <Arrow /></a>
+      </div>
+    </div>
+    <ul class="story-rail">
+      {stories.items.map((s) => (
+        <li><a class="story-card" href={s.href}>
+          <div class="frame"><img class={s.image.fit} src={s.image.src} alt={s.name} width={s.image.width} height={s.image.height}></div>
+          <div class="story-meta"><p class="t-body-s">{s.year}</p><h3 class="t-heading-m">{s.name}</h3></div>
+        </a></li>
+      ))}
+    </ul>
+  </div>
+</section>

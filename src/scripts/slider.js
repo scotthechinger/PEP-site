@@ -10,11 +10,17 @@
   function go(n) {
     i = Math.max(0, Math.min(slides.length - 1, n));
     track.style.transform = 'translateX(' + (-100 * i) + '%)';
+    fit();
     tabs.forEach(function (t, k) { t.classList.toggle('is-active', k === i); t.setAttribute('aria-selected', k === i ? 'true' : 'false'); t.tabIndex = k === i ? 0 : -1; });
     slides.forEach(function (s, k) { s.setAttribute('aria-hidden', k === i ? 'false' : 'true'); s.querySelectorAll('a').forEach(function (a) { a.tabIndex = k === i ? 0 : -1; }); });
     prev.disabled = i === 0; next.disabled = i === slides.length - 1;
     if (!next.disabled) nextLabel.textContent = labels[i + 1].replace(/^(\d\d): .*/, 'Stage $1');
   }
+  // Slides stack vertically on tablet/mobile, so the viewport follows the active slide's height instead of the tallest one
+  var viewport = root.querySelector('.slides');
+  function fit() { viewport.style.height = slides[i].offsetHeight + 'px'; }
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   tabs.forEach(function (t, k) { t.addEventListener('click', function () { go(k); }); });
   prev.addEventListener('click', function () { go(i - 1); });
   next.addEventListener('click', function () { go(i + 1); });

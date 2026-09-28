@@ -8,11 +8,13 @@ const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
   <a class="logo" href="/" aria-label={`${site.name} — home`}>
     <img src="/assets/logo.svg" alt={site.name} width="197.5" height="53.49">
   </a>
-  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
-  <nav class="site-nav" id="primary-nav" aria-label="Primary">
-    {nav.map((item) => (
-      <a class:list={['navlink', current === item.href && 'is-active']} href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>
-    ))}
-    <a class="btn" href={donate.href}>{donate.label} <Arrow /></a>
-  </nav>
+  <div class="site-right">
+    <nav class="site-nav" id="primary-nav" aria-label="Primary">
+      {nav.map((item) => (
+        <a class:list={['navlink', current === item.href && 'is-active']} href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+    <a class="btn site-donate" href={donate.href}>{donate.label} <Arrow /></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
+  </div>
 </header>

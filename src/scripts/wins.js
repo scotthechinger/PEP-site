@@ -7,9 +7,13 @@
   var col = root.querySelector('.wins-thumbs');
   var tag = root.querySelector('[data-wins-tag]');
   var n = slides.length, i = 0;
+  var viewport = root.querySelector('.wins-slides');
+  window.addEventListener('resize', function () { viewport.style.height = slides[i].offsetHeight + 'px'; });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { viewport.style.height = slides[i].offsetHeight + 'px'; });
   function go(k) {
     i = (k + n) % n;
     track.style.transform = 'translateX(' + (-100 * i) + '%)';
+    viewport.style.height = slides[i].offsetHeight + 'px';
     slides.forEach(function (s, j) { s.setAttribute('aria-hidden', j === i ? 'false' : 'true'); s.querySelectorAll('a').forEach(function (a) { a.tabIndex = j === i ? 0 : -1; }); });
     tag.textContent = slides[i].getAttribute('data-tag');
     // Thumbnails: the upcoming slides, in order, nearest at the bottom

@@ -1,0 +1,36 @@
+---
+// About: dark intro block with the photo collage. Content: src/data/about.js (intro)
+import { intro } from '../../data/about.js';
+// Collage box = Figma coords x 731→1628, y 76.62→632 inside the 1628×690 block. Each photo + its side tab, as percentages of that box (tab top = % of the photo height).
+const spots = [
+  { left: 20.07, top: 0,     width: 28.76, height: 28.99, tabTop: 12.4 },  // 258×161
+  { left: 48.83, top: 28.63, width: 45.93, height: 39.43, tabTop: 35.8 },  // 412×219
+  { left: 4.35,  top: 68.13, width: 44.48, height: 31.87, tabTop: 20.3 },  // 399×177 (cropped)
+];
+const tabTone = { purple: ['var(--color-purple-300)', 'var(--color-neutral-900)'], pink: ['var(--color-pink-500)', 'var(--color-pink-100)'], blue: ['var(--color-blue-300)', 'var(--color-blue-900)'] };
+---
+<section class="ab-intro" aria-labelledby="about-h">
+  <div class="ab-intro-box">
+    <div class="ab-intro-content">
+      <div class="ab-intro-head">
+        <p class="t-cta">{intro.eyebrow}</p>
+        <h1 class="t-heading-xl" id="about-h">{intro.headline}</h1>
+      </div>
+      <p class="t-body-m ab-intro-body">{intro.body}</p>
+    </div>
+    <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+    <div class="ab-collage" aria-hidden="true">
+      {intro.collage.map((img, i) => {
+        const s = spots[i]; const [bg, text] = tabTone[img.tab.tone];
+        return (
+          <figure class:list={['ab-photo', i === 2 && 'is-cropped']} style={`left:${s.left}%; top:${s.top}%; width:${s.width}%; height:${s.height}%`}>
+            <img src={img.src} alt="" width={img.width} height={img.height} loading="lazy">
+            <span class="ab-tabwrap" style={`top:${s.tabTop}%; --tab-bg:${bg}; --tab-text:${text}`}>
+              <span class="tab"><span class="tab-label">{img.tab.label}</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></span>
+            </span>
+          </figure>
+        );
+      })}
+    </div>
+  </div>
+</section>

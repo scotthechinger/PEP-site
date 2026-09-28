@@ -1,0 +1,17 @@
+---
+// About: four pillar cards. Content: src/data/about.js (pillars)
+import { pillars } from '../../data/about.js';
+---
+<section class="pillars" aria-label="What PEP does">
+  <ul class="pillar-cards">
+    {pillars.map((p) => (
+      <li class="pillar" style={`--c100:var(--color-${p.tone}-100); --c300:var(--color-${p.tone}-300); --c500:var(--color-${p.tone}-500)`}>
+        <div class="pillar-inner">
+          <h2 class="t-heading-s pillar-title"><svg class="acard-icon" aria-hidden="true"><use href="#i-action"/></svg><span>{p.title}</span></h2>
+          <p class="t-body-m">{p.body}</p>
+        </div>
+        <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+      </li>
+    ))}
+  </ul>
+</section>

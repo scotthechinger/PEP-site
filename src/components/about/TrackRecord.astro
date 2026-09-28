@@ -1,0 +1,43 @@
+---
+// About: "Our track record" — Alt Slider (Figma 13092:20573). Content: src/data/about.js (wins)
+import Arrow from '../Arrow.astro';
+import { wins } from '../../data/about.js';
+---
+<section class="wins" aria-labelledby="wins-h">
+  <div class="wins-head">
+    <p class="eyebrow t-cta"><svg aria-hidden="true"><use href="#i-eyebrow"/></svg> {wins.eyebrow}</p>
+    <h2 class="t-display-xl" id="wins-h">{wins.heading}</h2>
+  </div>
+  <div class="wins-frame" data-wins>
+    <div class="wins-carousel">
+      <div class="wins-tab tab" aria-hidden="true"><span class="tab-label" data-wins-tag>{wins.items[0].tag}</span><svg class="tab-edge" aria-hidden="true"><use href="#i-tabedge"/></svg></div>
+      <div class="wins-slides">
+        <div class="wins-track">
+          {wins.items.map((w, i) => (
+            <div class="wins-slide" aria-hidden={i === 0 ? 'false' : 'true'} data-tag={w.tag}>
+              <article class="wins-card">
+                <h3 class="t-heading-m-tight">{w.title}</h3>
+                <div class="wins-card-body">
+                  <p class="t-body-s">{w.body}</p>
+                  <a class="cta" href={w.cta.href}>{w.cta.label} <Arrow /></a>
+                </div>
+              </article>
+              <div class="wins-media"><img src={w.image.src} alt={w.image.alt} width={w.image.width} height={w.image.height} loading="lazy" style={w.image.fit === 'contain' ? 'object-fit:contain' : undefined}></div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="wins-arrows">
+        <button class="cta" type="button" data-wins-prev aria-label="Previous win"><Arrow prev /></button>
+        <button class="cta" type="button" data-wins-next>{wins.nextLabel} <Arrow /></button>
+      </div>
+    </div>
+    <div class="wins-thumbs" aria-hidden="true">
+      {wins.items.map((w, i) => (
+        <div class="wins-thumb" data-thumb={i}><img src={w.image.src} alt="" width={w.image.width} height={w.image.height} loading="lazy" style={w.image.fit === 'contain' ? 'object-fit:contain' : undefined}></div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script src="../../scripts/wins.js"></script>

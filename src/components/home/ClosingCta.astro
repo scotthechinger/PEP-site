@@ -1,15 +1,18 @@
 ---
+// "Let's change our system together." Shared by every page; pass `links` to change the link row (defaults to the homepage set).
 import Arrow from '../Arrow.astro';
 import { closing } from '../../data/home.js';
+interface Props { links?: { label: string; href: string }[]; body?: string }
+const { links = closing.links, body = closing.body } = Astro.props;
 ---
 <section class="closing" aria-labelledby="close-h">
   <div class="closing-copy">
     <div class="closing-headline">
       <h2 class="t-display-xl" id="close-h">{closing.headline} <span class="hl t-accent">{closing.accent}</span></h2>
-      <p class="t-body-m">{closing.body}</p>
+      <p class="t-body-m">{body}</p>
     </div>
     <div class="closing-links">
-      {closing.links.map((l) => <a class="cta" href={l.href}>{l.label} <Arrow /></a>)}
+      {links.map((l) => <a class="cta" href={l.href}>{l.label} <Arrow /></a>)}
     </div>
   </div>
   <div class="closing-media">

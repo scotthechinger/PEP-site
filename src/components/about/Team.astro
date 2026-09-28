@@ -1,0 +1,23 @@
+---
+// About: Our Team / Board of Directors / Advisory Board grids. Content: src/data/about.js (team)
+import { team } from '../../data/about.js';
+---
+<section class="team" aria-labelledby="team-h">
+  {team.groups.map((g, gi) => (
+    <div class="team-group">
+      <div class="team-head">
+        <h2 class="t-heading-section" id={gi === 0 ? 'team-h' : undefined}>{g.heading}</h2>
+        {gi === 0 && <p class="t-body-s">{team.sub}</p>}
+      </div>
+      <ul class="team-grid">
+        {g.people.map((p) => (
+          <li class="person">
+            <div class="person-photo"><img src={p.image.src} alt={p.name} width={p.image.width} height={p.image.height} loading="lazy" style={`object-position: 50% ${p.image.focus}%`}></div>
+            <h3 class="t-heading-m">{p.name}</h3>
+            <p class="t-body-s">{p.title}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</section>

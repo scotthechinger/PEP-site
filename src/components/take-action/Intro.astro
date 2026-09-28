@@ -1,0 +1,19 @@
+---
+// Take Action: intro column + the four action cards. Content: src/data/take-action.js
+import Arrow from '../Arrow.astro';
+import ActionCard from '../ActionCard.astro';
+import { intro, actions } from '../../data/take-action.js';
+---
+<section class="ta" aria-labelledby="ta-h">
+  <div class="ta-intro">
+    <div class="ta-head">
+      <p class="t-cta">{intro.eyebrow}</p>
+      <h1 class="t-heading-xl" id="ta-h">{intro.headline}</h1>
+    </div>
+    <p class="t-body-m ta-body">{intro.body}</p>
+    <a class="btn" href={intro.cta.href}>{intro.cta.label} <Arrow /></a>
+  </div>
+  <div class="ta-cards">
+    {actions.map((a) => <ActionCard id={a.id} tone={a.tone} title={a.title} body={a.body} cta={a.cta} />)}
+  </div>
+</section>

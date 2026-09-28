@@ -20,15 +20,22 @@ src/
     Menu.astro              scroll hamburger + slide-down panel (Menu=Open)
     Footer.astro            footer (Figma "Footer" component)
     Arrow.astro / Icons.astro
-    home/                   one component per homepage section
+    ActionCard.astro        dark card + corner fold + CTA (Take Action cards, PEP Structure cards)
+    home/                   one component per homepage section (ClosingCta + Quote are reused by other pages)
+    about/                  About page sections: Intro (collage), Pillars, TrackRecord (slider), Team, Structure
+    take-action/            Take Action page sections
+  pages/
+    index.astro             /            homepage
+    about.astro             /about       About PEP
+    take-action.astro       /take-action Take Action
   data/
     site.js                 nav, donate, footer columns — change once, every page updates
-    home.js                 homepage copy, stats, stages, stories. Phase 2: Sanity supplies these at build time.
+    home.js / about.js / take-action.js   per-page copy, images, links. Phase 2: Sanity supplies these at build time.
   illustrations/*.svg       temporary stage art until Kelsey supplies per-stage imagery
-  scripts/                  menu, slider, stat-card behaviour (plain JS, bundled by Astro)
+  scripts/                  menu, slider, stat-card, track-record slider behaviour (plain JS, bundled by Astro)
   styles/global.css         every token from the Figma Dev Handoff page (colors, type scale, spacing, breakpoints)
 public/
-  assets/                   images, logo, wordmark, social icons — exported from Figma
+  assets/                   images, logo, wordmark, social icons — exported from Figma (about/, team/ per page)
   fonts/                    licensed GT Standard files (see the FONTS note at the top of global.css)
 ```
 

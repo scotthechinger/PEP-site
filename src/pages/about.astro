@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Intro from '../components/about/Intro.astro';
+import Quote from '../components/home/Quote.astro';
+import Pillars from '../components/about/Pillars.astro';
+import TrackRecord from '../components/about/TrackRecord.astro';
+import Team from '../components/about/Team.astro';
+import Structure from '../components/about/Structure.astro';
+import ClosingCta from '../components/home/ClosingCta.astro';
+import { quoteM, quoteL, closingLinks } from '../data/about.js';
+---
+<Base title="About PEP — Protect Ethical Prosecutors" description="PEP is a nonpartisan watchdog organization. We believe in ethical prosecution, and in accountability when that standard isn't met.">
+  <Intro />
+  <Quote size="m" mark={false} text={quoteM.text} attribution="" />
+  <Pillars />
+  <TrackRecord />
+  <Quote text={quoteL.text} attribution={quoteL.attribution} />
+  <Team />
+  <Structure />
+  <ClosingCta links={closingLinks} />
+</Base>

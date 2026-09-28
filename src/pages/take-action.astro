@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import Intro from '../components/take-action/Intro.astro';
+import ClosingCta from '../components/home/ClosingCta.astro';
+import { closingLinks } from '../data/take-action.js';
+---
+<Base title="Take Action — Protect Ethical Prosecutors" description="Absolute immunity lasts because almost no one knows it exists. Share the facts, join the movement, report misconduct, or donate to PEP.">
+  <Intro />
+  <ClosingCta links={closingLinks} />
+</Base>

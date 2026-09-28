@@ -1,0 +1,22 @@
+---
+// Dark card with a corner fold and a CTA link beneath (Figma "Action Card" / "Large Card").
+// tone: orange | pink | blue | purple → title tone-300, body tone-100, fold + arrow + icon tone-500/100.
+// variant: "action" (icon + Heading/S, Body/M) or "large" (Heading/M tight, Body/L, no icon).
+import Arrow from './Arrow.astro';
+interface Props { tone: string; title: string; body: string; cta: { label: string; href: string }; variant?: 'action' | 'large'; id?: string }
+const { tone, title, body, cta, variant = 'action', id } = Astro.props;
+const style = `--c100:var(--color-${tone}-100); --c300:var(--color-${tone}-300); --c500:var(--color-${tone}-500)`;
+---
+<article class:list={['acard', `acard-${variant}`]} style={style} id={id}>
+  <div class="acard-box">
+    <div class="acard-inner">
+      <h3 class:list={['acard-title', variant === 'action' ? 't-heading-s' : 't-heading-m-tight']}>
+        {variant === 'action' && <svg class="acard-icon" aria-hidden="true"><use href="#i-action"/></svg>}
+        <span>{title}</span>
+      </h3>
+      <p class={variant === 'action' ? 't-body-m' : 't-body-l'}>{body}</p>
+    </div>
+    <svg class="fold" aria-hidden="true"><use href="#i-fold"/></svg>
+  </div>
+  <a class="cta" href={cta.href}>{cta.label} <Arrow /></a>
+</article>

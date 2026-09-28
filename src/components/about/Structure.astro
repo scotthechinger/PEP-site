@@ -1,0 +1,15 @@
+---
+// About: PEP Structure — the two entities. Content: src/data/about.js (structure)
+import ActionCard from '../ActionCard.astro';
+import { structure } from '../../data/about.js';
+---
+<section class="structure" aria-labelledby="structure-h">
+  <div class="structure-head">
+    <p class="eyebrow t-cta"><svg aria-hidden="true"><use href="#i-eyebrow"/></svg> {structure.eyebrow}</p>
+    <h2 class="t-display-xl" id="structure-h">{structure.heading}</h2>
+    <p class="t-body-m structure-sub">{structure.sub}</p>
+  </div>
+  <div class="structure-cards">
+    {structure.entities.map((e) => <ActionCard variant="large" tone={e.tone} title={e.title} body={e.body} cta={e.cta} />)}
+  </div>
+</section>

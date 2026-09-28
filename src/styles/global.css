@@ -123,15 +123,18 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* Text styles — one class per Figma style */
 .t-display-xl   { font-family: var(--font-sans); font-weight: 600; font-size: var(--size-display-xl); line-height: var(--lh-display-xl); letter-spacing: -0.02em; }
 .t-stat-xl      { font-family: var(--font-sans); font-weight: 600; font-size: var(--size-stat-xl); line-height: var(--lh-stat-xl); letter-spacing: -0.02em; }
+.t-heading-xl   { font-family: var(--font-sans); font-weight: 600; font-size: var(--size-heading-xl); line-height: var(--lh-heading-xl); letter-spacing: -0.02em; }
 .t-heading-section { font-family: var(--font-sans); font-weight: 600; font-size: var(--size-heading-section); line-height: var(--lh-heading-section); letter-spacing: -0.02em; }
 .t-heading-l    { font-family: var(--font-sans); font-weight: 600; font-size: var(--size-heading-l); line-height: var(--lh-heading-l); letter-spacing: -0.02em; }
 .t-heading-m    { font-family: var(--font-sans); font-weight: 600; font-size: var(--size-heading-m); line-height: var(--lh-heading-m); letter-spacing: -0.02em; }
 .t-heading-m-tight { font-family: var(--font-sans); font-weight: 600; font-size: var(--size-heading-m-tight); line-height: var(--lh-heading-m-tight); letter-spacing: -0.02em; }
+.t-heading-s    { font-family: var(--font-sans); font-weight: 600; font-size: var(--size-heading-s); line-height: var(--lh-heading-s); letter-spacing: -0.02em; }
 .t-body-xl      { font-size: var(--size-body-xl); line-height: var(--lh-body-xl); }
 .t-body-l       { font-size: var(--size-body-l); line-height: var(--lh-body-l); }
 .t-body-m       { font-size: var(--size-body-m); line-height: var(--lh-body-m); }
 .t-body-s       { font-size: var(--size-body-s); line-height: var(--lh-body-s); }
 .t-quote-l      { font-family: var(--font-accent); font-style: italic; font-weight: 500; font-size: var(--size-quote-l); line-height: var(--lh-quote-l); letter-spacing: -0.02em; }
+.t-quote-m      { font-family: var(--font-accent); font-style: italic; font-weight: 500; font-size: var(--size-quote-m); line-height: var(--lh-quote-m); letter-spacing: -0.02em; }
 .t-accent       { font-family: var(--font-accent); font-style: italic; font-weight: 500; }
 .t-label        { font-family: var(--font-mono); font-weight: 500; font-size: 16px; line-height: 1.2; text-transform: uppercase; }
 .t-cta          { font-family: var(--font-mono); font-weight: 500; font-size: 16px; line-height: 1.4; text-transform: uppercase; }
@@ -600,4 +603,145 @@ body.menu-open { overflow: hidden; }
 .paper-card:focus-visible, .folder-card:focus-visible { outline: 3px solid var(--card-accent); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   .story-card .frame img, .story-card .story-meta, .story-card h3::after, .paper-card, .folder-card, .paper-card .fold, .paper-card h4::after, .folder-body h4::after, .folder-tab .tab { transition: none !important; }
+}
+
+/* =====================================================================
+   SHARED · Action Card / Large Card (Take Action cards, PEP Structure)
+   --c100 / --c300 / --c500 are set per card from its `tone`.
+   ===================================================================== */
+.acard { width: 810px; max-width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-10); }
+.acard-box { position: relative; width: 100%; padding: var(--space-50); background: var(--color-neutral-900); }
+.acard-inner { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-30); min-height: 283px; }
+.acard-large .acard-inner { min-height: 422px; }
+.acard-title { display: flex; align-items: center; gap: var(--space-10); color: var(--c300); white-space: pre-line; }
+.acard-icon { flex: 0 0 52px; width: 52px; height: 52px; --icon: var(--c100); }
+.acard-box p { color: var(--c100); }
+.acard .fold { --fold-inner: var(--c500); }
+.acard .cta .arrow { --circle: var(--c500); --arrow: var(--color-neutral-900); }
+.acard .fold { transition: transform .35s cubic-bezier(.2,.8,.2,1); transform-origin: 100% 0; }
+.acard:hover .fold { transform: scale(1.35); }
+
+/* =====================================================================
+   TAKE ACTION · Figma 13122:3377
+   ===================================================================== */
+.ta { display: flex; align-items: flex-start; gap: var(--space-10); padding: var(--space-50) var(--space-50) var(--space-150); }
+.ta-intro { flex: 0 0 667px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-30); }
+.ta-head { display: flex; flex-direction: column; gap: var(--space-10); width: 100%; }
+.ta-body { max-width: 537px; }
+.ta-cards { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-50); }
+@media (max-width: 1400px) {
+  .ta { flex-direction: column; gap: var(--space-50); }
+  .ta-intro { flex: none; width: 100%; max-width: 667px; }
+  .ta-cards { width: 100%; align-items: stretch; }
+  .acard { width: 100%; }
+}
+@media (max-width: 1023px) {
+  .acard-box { padding: var(--space-30); }
+  .acard-inner { min-height: 0; gap: var(--space-50); }
+  .acard-large .acard-inner { min-height: 0; }
+  .acard-icon { flex-basis: 40px; width: 40px; height: 40px; }
+}
+
+/* =====================================================================
+   ABOUT · Figma 13092:20524
+   ===================================================================== */
+/* Intro block with photo collage */
+.ab-intro { padding: 0 var(--space-50); }
+.ab-intro-box { container-type: inline-size; position: relative; height: 690px; padding: var(--space-50); background: var(--color-neutral-900); color: var(--color-neutral-100); display: flex; align-items: center; overflow: hidden; }
+.ab-intro-content { width: 667px; max-width: 100%; height: 573px; display: flex; flex-direction: column; justify-content: space-between; position: relative; z-index: 1; }
+.ab-intro-head { display: flex; flex-direction: column; gap: var(--space-10); }
+.ab-intro-body { max-width: 537px; }
+.ab-intro-box > .fold { --fold-inner: var(--color-neutral-900); }
+/* Collage box = Figma x 731→1628 · y 76.62→632 of the 1628×690 block */
+.ab-collage { position: absolute; right: 0; top: 11.1%; width: 55.1%; aspect-ratio: 897 / 555.38; }
+.ab-photo { position: absolute; margin: 0; }
+.ab-photo img { width: 100%; height: 100%; object-fit: cover; }
+.ab-photo.is-cropped { overflow: hidden; }
+.ab-photo.is-cropped img { position: absolute; left: -35.12%; top: -10.63%; width: 144.89%; height: 183.72%; max-width: none; object-fit: fill; }
+/* Side tabs are sized in container units (1cqw = 8.97px at 1728) so they scale with the collage */
+.ab-collage { container-type: inline-size; }
+.ab-tabwrap { position: absolute; left: -4.348cqw; width: 4.348cqw; height: 15.72cqw; display: grid; place-items: center; }
+.ab-tabwrap .tab { width: 15.72cqw; transform: rotate(-90deg); }
+.ab-tabwrap .tab-label { flex: 1 1 auto; padding: 1.115cqw 2.23cqw; margin-right: -0.557cqw; font-size: 1.784cqw; border-radius: .557cqw .557cqw 0 0; }
+.ab-tabwrap .tab-edge { flex-basis: 2.118cqw; width: 2.118cqw; height: 4.348cqw; }
+@media (max-width: 1400px) {
+  .ab-intro-box { height: auto; min-height: 690px; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: var(--space-50); }
+  .ab-intro-content { height: auto; gap: var(--space-50); }
+  .ab-collage { position: relative; right: auto; top: auto; width: calc(100% - 4.348cqw); max-width: 897px; align-self: flex-end; }
+}
+@media (max-width: 1023px) {
+  .ab-intro-box { min-height: 0; padding: var(--space-50) var(--space-30) var(--space-30); }
+}
+
+/* Quote/M variant (bars only, wider measure) */
+.quote-m blockquote { max-width: 1287px; }
+
+/* Pillar cards */
+.pillars { padding: 0 var(--space-50) var(--space-150); }
+.pillar-cards { display: flex; gap: var(--space-10); }
+.pillar { position: relative; flex: 1 1 0; min-width: 0; height: 345px; padding: var(--space-30); background: var(--color-neutral-900); }
+.pillar-inner { height: 100%; max-width: 310px; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-30); }
+.pillar-title { display: flex; align-items: center; gap: var(--space-10); color: var(--c300); white-space: pre-line; }
+.pillar p { color: var(--c100); max-width: 299px; }
+.pillar .fold { --fold-inner: var(--c500); transition: transform .35s cubic-bezier(.2,.8,.2,1); transform-origin: 100% 0; }
+.pillar:hover .fold { transform: scale(1.35); }
+@media (max-width: 1400px) { .pillar-cards { flex-wrap: wrap; } .pillar { flex: 1 1 calc(50% - 5px); } }
+@media (max-width: 599px) { .pillar { flex-basis: 100%; height: auto; min-height: 300px; } }
+
+/* "Our track record" — Alt Slider (13092:20573) */
+.wins { background: var(--color-purple-300); }
+.wins-head { display: flex; flex-direction: column; align-items: flex-start; padding: var(--space-50) var(--space-50) var(--space-30); }
+.wins-head h2 { max-width: 901px; }
+.wins-frame { position: relative; padding: 25px var(--space-50) var(--space-50); }
+.wins-carousel { position: relative; width: calc(100% - 212px); padding-top: var(--space-30); display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-30); }
+.wins-tab { position: absolute; left: 0; top: -8.5px; --tab-bg: var(--color-purple-900); --tab-text: var(--color-purple-300); }
+.wins-tab .tab-label { width: 166px; }
+.wins-slides { width: 100%; overflow: hidden; }
+.wins-track { display: flex; transition: transform .55s cubic-bezier(.65,0,.35,1); }
+.wins-slide { flex: 0 0 100%; width: 100%; display: flex; align-items: flex-start; gap: var(--space-10); }
+.wins-card { flex: 1 1 0; min-width: 0; height: 464px; padding: var(--space-30); background: var(--color-neutral-900); display: flex; flex-direction: column; justify-content: space-between; }
+.wins-card h3 { color: var(--color-purple-300); min-height: 62px; }
+.wins-card-body { display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-30); min-height: 200px; color: var(--color-purple-100); }
+.wins-card .cta { --cta-text: var(--color-blue-100); }
+.wins-card .cta .arrow { --circle: var(--color-purple-300); --arrow: var(--color-neutral-900); }
+.wins-media { flex: 1 1 0; min-width: 0; height: 464px; background: var(--color-purple-900); }
+.wins-media img { width: 100%; height: 100%; object-fit: cover; }
+.wins-arrows { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+.wins-arrows .arrow { --circle: var(--color-purple-500); --arrow: var(--color-blue-100); }
+.wins-thumbs { position: absolute; right: var(--space-50); top: 54.52px; width: 178px; height: 464px; display: flex; flex-direction: column; justify-content: flex-end; gap: var(--space-10); overflow: hidden; }
+.wins-thumb { flex: 0 0 160px; width: 178px; height: 160px; overflow: hidden; filter: blur(2px); mix-blend-mode: luminosity; }
+.wins-thumb img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 1400px) {
+  .wins-carousel { width: 100%; }
+  .wins-thumbs { display: none; }
+}
+@media (max-width: 1023px) {
+  .wins-slide { flex-direction: column; }
+  .wins-card { height: auto; width: 100%; }
+  .wins-media { width: 100%; height: 320px; }
+}
+
+/* Team grids */
+.team { background: var(--color-neutral-900); color: var(--color-neutral-100); padding: var(--space-150) var(--space-50); display: flex; flex-direction: column; gap: 120px; }
+.team-group { display: flex; flex-direction: column; gap: var(--space-30); }
+.team-head { display: flex; flex-direction: column; gap: var(--space-10); }
+.team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: var(--space-50); column-gap: var(--space-30); }
+.person { width: 351px; max-width: 100%; display: flex; flex-direction: column; gap: var(--space-10); }
+.person-photo { width: 100%; aspect-ratio: 351 / 354; overflow: hidden; }
+.person-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.person:hover .person-photo img { transform: scale(1.04); }
+.person h3 { padding-right: var(--space-20); }
+@media (max-width: 1023px) { .team { gap: 80px; } .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 599px) { .team-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* PEP Structure */
+.structure { padding: var(--space-150) 0; }
+.structure-head { display: flex; flex-direction: column; align-items: flex-start; padding: 0 var(--space-50) var(--space-30); }
+.structure-sub { max-width: 584px; margin-top: var(--space-30); }
+.structure-cards { display: flex; gap: var(--space-10); padding: 0 var(--space-50); }
+.structure-cards .acard { flex: 1 1 0; width: auto; min-width: 0; }
+@media (max-width: 1023px) { .structure-cards { flex-direction: column; gap: var(--space-50); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .wins-track, .acard .fold, .pillar .fold, .person-photo img { transition: none !important; }
 }

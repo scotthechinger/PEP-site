@@ -1,10 +1,13 @@
 ---
+// Pull quote. size="l" (Quote/L, with quote marks) or size="m" (Quote/M, bars only). Defaults to the homepage quote.
 import { quote } from '../../data/home.js';
+interface Props { text?: string; attribution?: string; size?: 'l' | 'm'; mark?: boolean }
+const { text = quote.text, attribution = quote.attribution, size = 'l', mark = true } = Astro.props;
 ---
-<section class="quote">
+<section class:list={['quote', size === 'm' && 'quote-m']}>
   <figure style="display:contents">
-    <svg class="quotemark" aria-hidden="true" style="color:#0039D4"><use href="#i-quotes"/></svg>
-    <blockquote class="t-quote-l"><span class="hl">{quote.text}</span></blockquote>
-    <figcaption>{quote.attribution}</figcaption>
+    {mark && <svg class="quotemark" aria-hidden="true" style="color:#0039D4"><use href="#i-quotes"/></svg>}
+    <blockquote class={size === 'm' ? 't-quote-m' : 't-quote-l'}><span class="hl">{text}</span></blockquote>
+    {attribution && <figcaption>{attribution}</figcaption>}
   </figure>
 </section>
